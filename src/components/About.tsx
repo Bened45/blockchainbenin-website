@@ -62,13 +62,13 @@ const About = () => {
         {
             year: "2024",
             title: "Premiers Programmes",
-            description: "Lancement de formations et d'ateliers éducatifs",
+            description: "Lancement de formations et d&apos;ateliers éducatifs",
             icon: BookOpen
         },
         {
             year: "2024",
             title: "Reconnaissance",
-            description: "Devenu un acteur clé de l'écosystème tech béninois",
+            description: "Devenu un acteur clé de l&apos;écosystème tech béninois",
             icon: Award
         }
     ];
@@ -119,7 +119,7 @@ const About = () => {
 
                         {/* Title */}
                         <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-black text-white mb-6 leading-tight animate-slide-up">
-                            Construire l'Avenir de la
+                            Construire l&apos;Avenir de la
                             <span className="block mt-2 bg-gradient-to-r from-blue-400 via-cyan-400 to-green-400 bg-clip-text text-transparent">
                                 Blockchain en Afrique
                             </span>
@@ -127,7 +127,7 @@ const About = () => {
 
                         {/* Description */}
                         <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto mb-12 leading-relaxed animate-slide-up animation-delay-200">
-                            Nous sommes une communauté de visionnaires, développeurs et entrepreneurs qui croient au pouvoir transformateur de la technologie blockchain pour l'Afrique francophone.
+                            Nous sommes une communauté de visionnaires, développeurs et entrepreneurs qui croient au pouvoir transformateur de la technologie blockchain pour l&apos;Afrique francophone.
                         </p>
 
                         {/* CTA Buttons */}
@@ -205,7 +205,7 @@ const About = () => {
                             </div>
 
                             <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6 leading-tight">
-                                D'une Vision à une
+                                D&apos;une Vision à une
                                 <span className="block bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">
                                     Révolution Technologique
                                 </span>
@@ -213,13 +213,13 @@ const About = () => {
 
                             <div className="space-y-4 text-lg text-gray-600 leading-relaxed mb-8">
                                 <p>
-                                    En 2024, un groupe de passionnés de technologie blockchain s'est réuni avec une mission claire : <strong className="text-gray-900">démocratiser l'accès à la blockchain en Afrique francophone</strong>.
+                                    En 2024, un groupe de passionnés de technologie blockchain s&apos;est réuni avec une mission claire : <strong className="text-gray-900">démocratiser l&apos;accès à la blockchain en Afrique francophone</strong>.
                                 </p>
                                 <p>
-                                    Ce qui a commencé comme des rencontres informelles est rapidement devenu un <strong className="text-gray-900">mouvement national</strong>, rassemblant développeurs, entrepreneurs, étudiants et visionnaires autour d'une passion commune.
+                                    Ce qui a commencé comme des rencontres informelles est rapidement devenu un <strong className="text-gray-900">mouvement national</strong>, rassemblant développeurs, entrepreneurs, étudiants et visionnaires autour d&apos;une passion commune.
                                 </p>
                                 <p>
-                                    Aujourd'hui, Blockchain Bénin est reconnu comme <strong className="text-gray-900">le hub incontournable</strong> de l'innovation blockchain dans la région, avec des programmes de formation, des événements réguliers et un réseau de partenaires stratégiques.
+                                    Aujourd&apos;hui, Blockchain Bénin est reconnu comme <strong className="text-gray-900">le hub incontournable</strong> de l&apos;innovation blockchain dans la région, avec des programmes de formation, des événements réguliers et un réseau de partenaires stratégiques.
                                 </p>
                             </div>
 
@@ -350,10 +350,10 @@ const About = () => {
                 <div className="container-custom relative z-10">
                     <div className="max-w-4xl mx-auto text-center">
                         <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-6">
-                            Prêt à Faire Partie de l'Aventure ?
+                            Prêt à Faire Partie de l&apos;Aventure ?
                         </h2>
                         <p className="text-xl text-blue-200 mb-10">
-                            Rejoignez une communauté de visionnaires qui construisent l'avenir de la blockchain en Afrique
+                            Rejoignez une communauté de visionnaires qui construisent l&apos;avenir de la blockchain en Afrique
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <button className="group px-10 py-5 bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-xl font-bold text-lg shadow-2xl shadow-blue-500/50 hover:shadow-blue-500/70 transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2">

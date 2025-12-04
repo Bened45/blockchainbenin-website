@@ -30,19 +30,19 @@ const Hero = () => {
                                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
                                 <span className="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span>
                             </span>
-                            Construisons l'avenir ensemble
+                            Construisons l&apos;avenir ensemble
                         </span>
                     </div>
 
                     {/* Title */}
                     <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold text-white leading-tight animate-slide-up animation-delay-200">
-                        Révolutionnez l'Afrique <br />
+                        Révolutionnez l&apos;Afrique <br />
                         avec la <span className="gradient-text-secondary">Blockchain</span>
                     </h1>
 
                     {/* Description */}
                     <p className="text-lg sm:text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed animate-slide-up animation-delay-400">
-                        Rejoignez le mouvement qui transforme l'Afrique francophone. Apprenez, innovez et construisez l'avenir avec la technologie blockchain.
+                        Rejoignez le mouvement qui transforme l&apos;Afrique francophone. Apprenez, innovez et construisez l&apos;avenir avec la technologie blockchain.
                     </p>
 
                     {/* CTAs */}

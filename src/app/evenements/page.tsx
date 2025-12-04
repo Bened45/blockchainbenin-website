@@ -24,7 +24,7 @@ const EventsPage = () => {
             time: '10:00 - 17:00',
             location: 'Cotonou, Bénin',
             subtitle: 'Crypto Treasury',
-            description: '48h pour développer des solutions blockchain innovantes pour l\'Afrique. Mentorat, prix et opportunités de networking.',
+            description: '48h pour développer des solutions blockchain innovantes pour l&apos;Afrique. Mentorat, prix et opportunités de networking.',
             participants: '100+ développeurs',
             type: 'Hackathon',
             status: 'upcoming'
@@ -135,7 +135,7 @@ const EventsPage = () => {
                                     </div>
 
                                     <button className="w-full bg-[#0066CC] text-white py-3 px-6 rounded-full font-medium hover:bg-[#0052A3] transition-colors">
-                                        S'inscrire →
+                                        S&apos;inscrire →
                                     </button>
                                 </div>
                             </div>
@@ -198,7 +198,7 @@ const EventsPage = () => {
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <button className="px-8 py-4 bg-white text-[#0066CC] rounded-full font-bold hover:bg-gray-100 transition-colors">
-                                S'abonner à la newsletter
+                                S&apos;abonner à la newsletter
                             </button>
                             <button className="px-8 py-4 bg-transparent border-2 border-white text-white rounded-full font-bold hover:bg-white/10 transition-colors">
                                 Proposer un événement

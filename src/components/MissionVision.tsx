@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import Section from './ui/Section';
 import { Target, Eye, CheckCircle2 } from 'lucide-react';
 
@@ -23,7 +24,7 @@ const MissionVision = () => {
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-primary-200">Transformer</span>
                         </h2>
                         <p className="text-xl text-gray-700 leading-relaxed mb-8 border-l-4 border-primary pl-6">
-                            Nous ne formons pas seulement des développeurs. Nous forgeons les architectes de l'avenir numérique africain, capables de résoudre des défis complexes avec des solutions décentralisées.
+                            Nous ne formons pas seulement des développeurs. Nous forgeons les architectes de l&apos;avenir numérique africain, capables de résoudre des défis complexes avec des solutions décentralisées.
                         </p>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -38,15 +39,17 @@ const MissionVision = () => {
 
                     <div className="lg:w-1/2 relative">
                         <div className="relative z-10 rounded-[3rem] overflow-hidden border-4 border-white/5 shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-500">
-                            <img
+                            <Image
                                 src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=2940&auto=format&fit=crop"
                                 alt="Mission"
+                                width={600}
+                                height={400}
                                 className="w-full h-auto object-cover"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-dark-bg/80 to-transparent"></div>
                             <div className="absolute bottom-8 left-8 right-8">
                                 <div className="text-white font-bold text-2xl">Impact Réel</div>
-                                <div className="text-gray-100">Des solutions concrètes pour l'Afrique</div>
+                                <div className="text-gray-100">Des solutions concrètes pour l&apos;Afrique</div>
                             </div>
                         </div>
                         {/* Decorative element */}
@@ -66,7 +69,7 @@ const MissionVision = () => {
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary-400 to-secondary-200">de Référence</span>
                         </h2>
                         <p className="text-xl text-gray-700 leading-relaxed mb-8 border-l-4 border-secondary pl-6">
-                            D'ici 2030, nous serons le cœur battant de l'innovation blockchain en Afrique francophone. Un écosystème où talents, capitaux et idées convergent pour créer de la valeur durable.
+                            D&apos;ici 2030, nous serons le cœur battant de l&apos;innovation blockchain en Afrique francophone. Un écosystème où talents, capitaux et idées convergent pour créer de la valeur durable.
                         </p>
 
                         <div className="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
@@ -77,9 +80,11 @@ const MissionVision = () => {
 
                     <div className="lg:w-1/2 relative">
                         <div className="relative z-10 rounded-[3rem] overflow-hidden border-4 border-white/5 shadow-2xl transform -rotate-3 hover:rotate-0 transition-transform duration-500">
-                            <img
+                            <Image
                                 src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=2565&auto=format&fit=crop"
                                 alt="Vision"
+                                width={600}
+                                height={400}
                                 className="w-full h-auto object-cover"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-dark-bg/80 to-transparent"></div>

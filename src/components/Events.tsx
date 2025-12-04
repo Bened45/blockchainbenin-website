@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useRef } from 'react';
+import Image from 'next/image';
 import Section from './ui/Section';
 import Button from './ui/Button';
 import { Calendar, MapPin, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
@@ -30,7 +31,7 @@ const Events = () => {
             title: 'Crypto Treasury',
             date: '06 Decembre 2025',
             subtitle: 'Hackathon Finance',
-            description: '48h pour développer des solutions blockchain innovantes pour l\'Afrique.',
+            description: '48h pour développer des solutions blockchain innovantes pour l&apos;Afrique.',
             image: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?q=80&w=2670&auto=format&fit=crop',
             category: 'Hackathon',
             action: 'Participer'
@@ -63,7 +64,7 @@ const Events = () => {
                         Événements <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-400">À Venir</span>
                     </h2>
                     <p className="text-gray-300 text-lg max-w-xl">
-                        Ne manquez pas nos prochaines rencontres, formations et célébrations de l'innovation.
+                        Ne manquez pas nos prochaines rencontres, formations et célébrations de l&apos;innovation.
                     </p>
                 </div>
 
@@ -96,10 +97,11 @@ const Events = () => {
                     >
                         {/* Background Image */}
                         <div className="absolute inset-0">
-                            <img
+                            <Image
                                 src={event.image}
                                 alt={event.title}
-                                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                fill
+                                className="object-cover transition-transform duration-700 group-hover:scale-110"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-dark-bg via-dark-bg/50 to-transparent opacity-90"></div>
                         </div>

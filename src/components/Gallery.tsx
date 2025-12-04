@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import Section from './ui/Section';
 import { ArrowUpRight } from 'lucide-react';
 
@@ -21,7 +22,7 @@ const Gallery = () => {
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-400">Inoubliables</span>
                     </h2>
                     <p className="text-gray-700 text-xl max-w-md">
-                        Plongez au cœur de l'action. Revivez l'énergie de notre communauté.
+                        Plongez au cœur de l&apos;action. Revivez l&apos;énergie de notre communauté.
                     </p>
                 </div>
                 <Link href="/gallery" className="hidden md:flex items-center gap-2 text-white border-b border-white pb-1 hover:text-primary hover:border-primary transition-colors">
@@ -41,10 +42,11 @@ const Gallery = () => {
                             ${item.size === 'tall' ? 'md:row-span-2' : ''}
                         `}
                     >
-                        <img
+                        <Image
                             src={item.image}
                             alt={item.title}
-                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                            fill
+                            className="object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 

@@ -39,7 +39,7 @@ const Pillars = () => {
                     Nos Piliers Fondamentaux
                 </h2>
                 <p className="text-xl text-gray-500 max-w-3xl mx-auto">
-                    Quatre fondations solides pour transformer l'écosystème blockchain africain
+                    Quatre fondations solides pour transformer l&apos;écosystème blockchain africain
                 </p>
             </div>
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import Section from '@/components/ui/Section';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight, Users, Calendar, Award, BookOpen } from 'lucide-react';
 
 export default function ClubBlockchainPage() {
@@ -9,10 +10,11 @@ export default function ClubBlockchainPage() {
             {/* Hero Section */}
             <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 z-0">
-                    <img
+                    <Image
                         src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2670&auto=format&fit=crop"
                         alt="Club Blockchain Hero"
-                        className="w-full h-full object-cover opacity-40"
+                        fill
+                        className="object-cover opacity-40"
                     />
                     <div className="absolute inset-0 bg-gradient-to-b from-dark-bg/80 via-dark-bg/50 to-dark-bg"></div>
                 </div>
@@ -38,14 +40,14 @@ export default function ClubBlockchainPage() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                         <div>
                             <h2 className="text-3xl md:text-5xl font-display font-bold mb-6">
-                                Plus qu'un club, <br />
+                                Plus qu&apos;un club, <br />
                                 <span className="text-primary-400">une famille.</span>
                             </h2>
                             <p className="text-gray-400 text-lg mb-6">
                                 Le Club Blockchain est une initiative de Blockchain Bénin visant à rassembler les passionnés, étudiants et professionnels autour des technologies décentralisées.
                             </p>
                             <p className="text-gray-400 text-lg mb-6">
-                                Notre mission est de démocratiser l'accès au savoir Web3 et de créer un environnement propice à l'innovation et à l'entrepreneuriat numérique.
+                                Notre mission est de démocratiser l&apos;accès au savoir Web3 et de créer un environnement propice à l&apos;innovation et à l&apos;entrepreneuriat numérique.
                             </p>
                             <div className="flex flex-wrap gap-4">
                                 <div className="flex items-center gap-2 text-white">
@@ -64,9 +66,11 @@ export default function ClubBlockchainPage() {
                         </div>
                         <div className="relative">
                             <div className="absolute -inset-4 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-3xl opacity-20 blur-xl"></div>
-                            <img
+                            <Image
                                 src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=2670&auto=format&fit=crop"
                                 alt="Club Meeting"
+                                width={600}
+                                height={400}
                                 className="relative rounded-3xl shadow-2xl border border-white/10"
                             />
                         </div>
@@ -120,7 +124,7 @@ export default function ClubBlockchainPage() {
                 <div className="container mx-auto px-4 text-center relative z-10">
                     <h2 className="text-4xl md:text-6xl font-display font-bold mb-6">Prêt à nous rejoindre ?</h2>
                     <p className="text-xl text-gray-300 max-w-2xl mx-auto mb-10">
-                        L'adhésion est ouverte à tous les passionnés. Rejoignez notre communauté Discord et participez à nos prochains événements.
+                        L&apos;adhésion est ouverte à tous les passionnés. Rejoignez notre communauté Discord et participez à nos prochains événements.
                     </p>
                     <div className="flex flex-col md:flex-row gap-4 justify-center">
                         <Link href="https://discord.gg/blockchainbenin" target="_blank" className="bg-[#5865F2] hover:bg-[#4752C4] text-white px-8 py-4 rounded-full font-bold transition-all flex items-center justify-center gap-2">

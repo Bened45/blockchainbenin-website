@@ -116,7 +116,7 @@ const AboutPage = () => {
 
                         {/* Description */}
                         <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto mb-12 leading-relaxed animate-slide-up animation-delay-200">
-                            Découvrez l'histoire, la mission et l'équipe passionnée qui œuvre pour démocratiser la blockchain en Afrique francophone.
+                            Découvrez l&apos;histoire, la mission et l&apos;équipe passionnée qui œuvre pour démocratiser la blockchain en Afrique francophone.
                         </p>
 
                         {/* Stats Grid */}
@@ -159,7 +159,7 @@ const AboutPage = () => {
                                     <BookOpen className="mb-6" size={56} />
                                     <h3 className="text-4xl font-bold mb-4">Notre Histoire</h3>
                                     <p className="text-blue-100 text-lg leading-relaxed">
-                                        D'un groupe de passionnés à une organisation nationale influente
+                                        D&apos;un groupe de passionnés à une organisation nationale influente
                                     </p>
                                 </div>
 
@@ -178,19 +178,19 @@ const AboutPage = () => {
                             <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-6 leading-tight">
                                 Des Passionnés qui
                                 <span className="block bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">
-                                    Changent l'Histoire
+                                    Changent l&apos;Histoire
                                 </span>
                             </h2>
 
                             <div className="space-y-4 text-lg text-gray-600 leading-relaxed mb-8">
                                 <p>
-                                    Face au constat d'un <strong className="text-gray-900">retard technologique croissant</strong> en Afrique francophone, nous avons décidé d'agir.
+                                    Face au constat d&apos;un <strong className="text-gray-900">retard technologique croissant</strong> en Afrique francophone, nous avons décidé d&apos;agir.
                                 </p>
                                 <p>
-                                    Des passionnés de technologie, développeurs, entrepreneurs et éducateurs se sont unis pour créer un <strong className="text-gray-900">mouvement qui transforme</strong> l'écosystème blockchain africain.
+                                    Des passionnés de technologie, développeurs, entrepreneurs et éducateurs se sont unis pour créer un <strong className="text-gray-900">mouvement qui transforme</strong> l&apos;écosystème blockchain africain.
                                 </p>
                                 <p>
-                                    Ce qui a commencé comme des rencontres informelles est devenu une <strong className="text-gray-900">organisation nationale influente</strong>, reconnue comme le hub incontournable de l'innovation blockchain en Afrique francophone.
+                                    Ce qui a commencé comme des rencontres informelles est devenu une <strong className="text-gray-900">organisation nationale influente</strong>, reconnue comme le hub incontournable de l&apos;innovation blockchain en Afrique francophone.
                                 </p>
                             </div>
 
@@ -225,7 +225,7 @@ const AboutPage = () => {
                                         </div>
                                         <div>
                                             <h3 className="text-3xl font-bold text-gray-900 mb-4">
-                                                Contribuer à l'Émergence d'une Communauté Structurée
+                                                Contribuer à l&apos;Émergence d&apos;une Communauté Structurée
                                             </h3>
                                             <p className="text-xl text-gray-600 leading-relaxed">
                                                 Au Bénin, nous voulons créer une <strong className="text-gray-900">communauté structurée de jeunes formés à la blockchain</strong>, capables de comprendre les enjeux, de participer aux projets et, pour certains, de porter des initiatives technologiques ou sociales à fort impact.
@@ -352,7 +352,7 @@ const AboutPage = () => {
                                 </h3>
 
                                 <p className="text-blue-100 leading-relaxed mb-6">
-                                    Focalisé sur l'éducation, les formations et la sensibilisation du grand public aux opportunités de la blockchain.
+                                    Focalisé sur l&apos;éducation, les formations et la sensibilisation du grand public aux opportunités de la blockchain.
                                 </p>
 
                                 <ul className="space-y-3">
@@ -491,7 +491,7 @@ const AboutPage = () => {
                             </div>
 
                             <p className="text-xl text-green-100 mb-8 leading-relaxed">
-                                Construire le premier centre communautaire blockchain de l'Afrique francophone.
+                                Construire le premier centre communautaire blockchain de l&apos;Afrique francophone.
                             </p>
 
                             <div className="space-y-6">
@@ -547,13 +547,13 @@ const AboutPage = () => {
                 <div className="container-custom">
                     <div className="text-center mb-16">
                         <div className="inline-block px-4 py-2 bg-gradient-to-r from-blue-500 to-green-500 text-white rounded-full text-sm font-bold mb-6">
-                            L'ÉQUIPE
+                            L&apos;ÉQUIPE
                         </div>
                         <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-4">
                             Rencontrez les <span className="bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">Visionnaires</span>
                         </h2>
                         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                            Une équipe passionnée et dévouée qui construit l'avenir de la blockchain en Afrique
+                            Une équipe passionnée et dévouée qui construit l&apos;avenir de la blockchain en Afrique
                         </p>
                     </div>
 
@@ -674,7 +674,7 @@ const AboutPage = () => {
                     <div className="mt-16 text-center">
                         <div className="inline-block bg-gradient-to-r from-blue-50 to-green-50 rounded-3xl p-8 md:p-12 shadow-lg max-w-3xl">
                             <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-                                Envie de Rejoindre l'Équipe ?
+                                Envie de Rejoindre l&apos;Équipe ?
                             </h3>
                             <p className="text-lg text-gray-600 mb-6">
                                 Nous sommes toujours à la recherche de talents passionnés pour renforcer notre équipe
@@ -699,7 +699,7 @@ const AboutPage = () => {
                             Nos <span className="bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">Partenaires</span>
                         </h2>
                         <p className="text-xl text-gray-600">
-                            Ensemble, nous construisons l'avenir de la blockchain en Afrique
+                            Ensemble, nous construisons l&apos;avenir de la blockchain en Afrique
                         </p>
                     </div>
 

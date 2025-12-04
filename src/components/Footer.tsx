@@ -11,7 +11,7 @@ const Footer = () => {
                     {/* Brand */}
                     <div className="space-y-6">
                         <Link href="/" className="flex items-center gap-2">
-                            
+
                             <div className="w-10 h-10 lg:w-32 lg:h-32 relative flex-shrink-0">
                                 <Image
                                     src="/logo2.png"
@@ -23,7 +23,7 @@ const Footer = () => {
                             </div>
                         </Link>
                         <p className="text-gray-300 leading-relaxed">
-                            Pionniers de l'éducation et de l'innovation blockchain en Afrique francophone. Construisons ensemble un avenir décentralisé.
+                            Pionniers de l&apos;éducation et de l&apos;innovation blockchain en Afrique francophone. Construisons ensemble un avenir décentralisé.
                         </p>
                         <div className="flex gap-4">
                             {[Facebook, Twitter, Linkedin, Instagram].map((Icon, i) => (

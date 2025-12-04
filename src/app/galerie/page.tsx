@@ -160,7 +160,7 @@ const GalleryPage = () => {
                             Ne manquez pas nos prochaines rencontres, formations et célébrations. Inscrivez-vous pour être informé !
                         </p>
                         <button className="px-8 py-4 bg-white text-[#0066CC] rounded-full font-bold hover:bg-gray-100 transition-colors">
-                            Voir le calendrier d'événements
+                            Voir le calendrier d&apos;événements
                         </button>
                     </div>
                 </div>

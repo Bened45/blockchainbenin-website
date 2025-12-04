@@ -15,13 +15,13 @@ const ProgramsPage = () => {
             id: 'formations',
             icon: GraduationCap,
             title: 'Formations',
-            description: 'Plonger de la blockchain au Bénin avec 8 ans d\'expérience. Passionné par l\'éducation, j\'accélère la transition blockchain en Afrique.',
+            description: 'Plonger de la blockchain au Bénin avec 8 ans d&apos;expérience. Passionné par l&apos;éducation, j&apos;accélère la transition blockchain en Afrique.',
             features: [
                 'Plus de 50 formations dispensées',
                 'Certifications reconnues',
                 'Formateurs experts',
                 'Accès à vie aux contenus',
-                'Communauté d\'entraide'
+                'Communauté d&apos;entraide'
             ]
         },
         {
@@ -31,8 +31,8 @@ const ProgramsPage = () => {
             description: 'Relevez des défis réels, développez des projets blockchain innovants en équipe et gagnez des prix.',
             features: [
                 '48h de développement intense',
-                'Mentors d\'experts',
-                'Prix jusqu\'à 5000€',
+                'Mentors d&apos;experts',
+                'Prix jusqu&apos;à 5000€',
                 'Networking avec investisseurs',
                 'Visibilité médiatique'
             ]
@@ -44,23 +44,23 @@ const ProgramsPage = () => {
             description: 'Programmes intensifs de 8 à 12 semaines pour une immersion totale dans une carrière blockchain.',
             features: [
                 'Formation immersive temps plein',
-                'Projets d\'entreprises',
+                'Projets d&apos;entreprises',
                 'Accompagnement continu',
                 'Taux de placement >80%',
-                'Réseau d\'alumni actif'
+                'Réseau d&apos;alumni actif'
             ]
         },
         {
             id: 'evenements',
             icon: PresentationIcon,
             title: 'Évènements',
-            description: 'Conférences, meetups, ateliers et BENIN BLOCKCHAIN Week pour dynamiser l\'écosystème.',
+            description: 'Conférences, meetups, ateliers et BENIN BLOCKCHAIN Week pour dynamiser l&apos;écosystème.',
             features: [
                 'Évènements mensuels réguliers',
                 'Interventions internationales',
                 'Networking de qualité',
                 'Gratuit et tout niveau',
-                'Certificat d\'assistance'
+                'Certificat d&apos;assistance'
             ]
         }
     ];
@@ -76,7 +76,7 @@ const ProgramsPage = () => {
                         Nos Programmes
                     </h1>
                     <p className="text-gray-600 max-w-3xl mx-auto">
-                        Formations, hackathons, bootcamps et évènements pour vous propulser dans l'univers blockchain
+                        Formations, hackathons, bootcamps et évènements pour vous propulser dans l&apos;univers blockchain
                     </p>
                 </div>
 
@@ -169,8 +169,8 @@ const ProgramsPage = () => {
                             <button
                                 key={index}
                                 className={`px-6 py-2 rounded-full font-medium transition-colors ${index === 0
-                                        ? 'bg-[#0066CC] text-white'
-                                        : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                                    ? 'bg-[#0066CC] text-white'
+                                    : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
                                     }`}
                             >
                                 {filter}
@@ -190,7 +190,7 @@ const ProgramsPage = () => {
                                 hours: '10 heures',
                                 certificate: 'Certificat',
                                 topics: [
-                                    'Qu\'est-ce que la blockchain ?',
+                                    'Qu&apos;est-ce que la blockchain ?',
                                     'Cryptographie et sécurité',
                                     'Consensus et protocoles',
                                     'Applications décentralisées'
@@ -245,14 +245,14 @@ const ProgramsPage = () => {
                                 title: 'NFT & Métaverse',
                                 level: 'Débutant',
                                 levelColor: '#4CAF50',
-                                description: 'Explorez l\'univers des NFT et du métaverse. Créez, vendez et gérez vos collections NFT.',
+                                description: 'Explorez l&apos;univers des NFT et du métaverse. Créez, vendez et gérez vos collections NFT.',
                                 duration: '6 semaines',
                                 hours: '10 heures',
                                 certificate: 'Certificat',
                                 topics: [
                                     'Standards NFT (ERC-721, ERC-1155)',
                                     'Plateformes de mint',
-                                    'Métaverse et cas d\'usage',
+                                    'Métaverse et cas d&apos;usage',
                                     'Stratégie de monétisation'
                                 ]
                             },
@@ -265,8 +265,8 @@ const ProgramsPage = () => {
                                 hours: '8 heures',
                                 certificate: 'Certificat',
                                 topics: [
-                                    'Cas d\'usage métier blockchain',
-                                    'ROI et stratégie d\'implémentation',
+                                    'Cas d&apos;usage métier blockchain',
+                                    'ROI et stratégie d&apos;implémentation',
                                     'Réglementation et conformité',
                                     'Transformation et conduite'
                                 ]
@@ -318,7 +318,7 @@ const ProgramsPage = () => {
 
                                     {/* CTA Button */}
                                     <button className="w-full bg-[#4CAF50] text-white py-3 px-6 rounded-full font-bold hover:bg-[#45a049] transition-colors">
-                                        S'inscrire →
+                                        S&apos;inscrire →
                                     </button>
                                 </div>
                             </div>
