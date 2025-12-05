@@ -36,7 +36,7 @@ const Footer = () => {
                         <Link href="/" className="flex items-center gap-2">
                             <div className="w-10 h-10 lg:w-32 lg:h-32 relative flex-shrink-0">
                                 <Image
-                                    src="/logo2.png"
+                                    src="/logo.png"
                                     alt="Blockchain Bénin Charity Logo"
                                     fill
                                     className="object-contain"
@@ -103,8 +103,8 @@ const Footer = () => {
                             </li>
                             <li className="flex items-center gap-4 text-gray-400">
                                 <Phone className="text-primary flex-shrink-0" />
-                                <a href="tel:+22901654493 07" className="hover:text-primary transition-colors">
-                                    +229 01 65 44 93 07
+                                <a href="tel:+22901664493 07" className="hover:text-primary transition-colors">
+                                    +229 01 66 44 93 07
                                 </a>
                             </li>
                             <li className="flex items-center gap-4 text-gray-400">
