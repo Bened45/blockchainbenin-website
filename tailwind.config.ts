@@ -127,6 +127,9 @@ export default {
                 'glow-secondary': '0 0 20px rgba(76, 175, 80, 0.5)',
                 'glow-accent': '0 0 20px rgba(252, 211, 77, 0.5)',
             },
+            backgroundSize: {
+                '300%': '300%',
+            },
         },
     },
     plugins: [],

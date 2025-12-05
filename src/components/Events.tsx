@@ -23,7 +23,7 @@ const Events = () => {
             date: '06 Decembre 2025',
             subtitle: 'Blockchain BENIN Week 2026',
             description: 'Une semaine dédiée à la blockchain avec conférences, ateliers et networking.',
-            image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=2670&auto=format&fit=crop',
+            image: '/images/event-conference.png',
             category: 'Conférence',
             action: "S'inscrire"
         },
@@ -32,7 +32,7 @@ const Events = () => {
             date: '06 Decembre 2025',
             subtitle: 'Hackathon Finance',
             description: '48h pour développer des solutions blockchain innovantes pour l&apos;Afrique.',
-            image: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?q=80&w=2670&auto=format&fit=crop',
+            image: '/images/event-hackathon.png',
             category: 'Hackathon',
             action: 'Participer'
         },
@@ -41,7 +41,7 @@ const Events = () => {
             date: '14 Decembre 2026',
             subtitle: 'Bootcamp Développeur',
             description: 'Formation intensive de 6 semaines pour devenir développeur blockchain.',
-            image: 'https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=2670&auto=format&fit=crop',
+            image: '/images/event-workshop.png',
             category: 'Formation',
             action: 'Contribuer'
         },
@@ -50,7 +50,7 @@ const Events = () => {
             date: '20 Janvier 2026',
             subtitle: 'Networking Cotonou',
             description: 'Rencontre mensuelle de la communauté blockchain béninoise.',
-            image: 'https://images.unsplash.com/photo-1523580494863-6f3031224c94?q=80&w=2670&auto=format&fit=crop',
+            image: '/images/event-meetup.png',
             category: 'Meetup',
             action: 'Rejoindre'
         }
@@ -58,9 +58,9 @@ const Events = () => {
 
     return (
         <Section id="events" className="bg-dark-bg py-32 overflow-hidden">
-            <div className="container mx-auto px-4 mb-12 flex flex-col md:flex-row justify-between items-end gap-6">
+            <div className="container mx-auto px-4 mb-8 md:mb-12 flex flex-col md:flex-row justify-between items-start md:items-end gap-4 md:gap-6">
                 <div>
-                    <h2 className="text-4xl md:text-6xl font-display font-bold text-white mb-4">
+                    <h2 className="text-3xl sm:text-4xl md:text-6xl font-display font-bold text-white mb-2 md:mb-4">
                         Événements <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-400">À Venir</span>
                     </h2>
                     <p className="text-gray-300 text-lg max-w-xl">
@@ -68,16 +68,16 @@ const Events = () => {
                     </p>
                 </div>
 
-                <div className="flex gap-4">
+                <div className="flex gap-3 md:gap-4">
                     <button
                         onClick={() => scroll('left')}
-                        className="p-4 rounded-full border border-white/10 text-white hover:bg-white/10 transition-colors"
+                        className="p-3 md:p-4 rounded-full border border-white/10 text-white hover:bg-white/10 transition-colors"
                     >
                         <ChevronLeft size={24} />
                     </button>
                     <button
                         onClick={() => scroll('right')}
-                        className="p-4 rounded-full border border-white/10 text-white hover:bg-white/10 transition-colors"
+                        className="p-3 md:p-4 rounded-full border border-white/10 text-white hover:bg-white/10 transition-colors"
                     >
                         <ChevronRight size={24} />
                     </button>
@@ -93,7 +93,7 @@ const Events = () => {
                 {events.map((event, index) => (
                     <div
                         key={index}
-                        className="min-w-[350px] md:min-w-[450px] snap-center group relative h-[500px] rounded-[2.5rem] overflow-hidden cursor-pointer"
+                        className="min-w-[280px] sm:min-w-[350px] md:min-w-[450px] snap-center group relative h-[400px] sm:h-[450px] md:h-[500px] rounded-[2rem] md:rounded-[2.5rem] overflow-hidden cursor-pointer"
                     >
                         {/* Background Image */}
                         <div className="absolute inset-0">

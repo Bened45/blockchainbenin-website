@@ -3,6 +3,12 @@ import Section from '@/components/ui/Section';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight, Users, Calendar, Award, BookOpen } from 'lucide-react';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: "Club Blockchain",
+    description: "Rejoignez la communauté étudiante blockchain du Bénin. Networking, formation et innovation pour la prochaine génération de leaders Web3.",
+};
 
 export default function ClubBlockchainPage() {
     return (
@@ -11,7 +17,7 @@ export default function ClubBlockchainPage() {
             <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 z-0">
                     <Image
-                        src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2670&auto=format&fit=crop"
+                        src="/images/event-workshop.png"
                         alt="Club Blockchain Hero"
                         fill
                         className="object-cover opacity-40"
@@ -67,7 +73,7 @@ export default function ClubBlockchainPage() {
                         <div className="relative">
                             <div className="absolute -inset-4 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-3xl opacity-20 blur-xl"></div>
                             <Image
-                                src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=2670&auto=format&fit=crop"
+                                src="/images/community-team.png"
                                 alt="Club Meeting"
                                 width={600}
                                 height={400}

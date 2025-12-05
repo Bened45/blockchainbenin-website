@@ -72,13 +72,13 @@ const Programs = () => {
                 </div>
 
                 {/* Programs Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 auto-rows-[450px]">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 auto-rows-[350px] sm:auto-rows-[400px] md:auto-rows-[450px]">
                     {programs.map((program, index) => (
                         <div
                             key={index}
                             className={`
                                 group relative rounded-[3rem] overflow-hidden transition-all duration-700 hover:scale-105 cursor-pointer
-                                ${program.size === 'large' ? 'md:col-span-2' : 'md:col-span-1'}
+                                ${program.size === 'large' ? 'sm:col-span-2 lg:col-span-2' : 'sm:col-span-1 lg:col-span-1'}
                                 animate-scale-in
                             `}
                             style={{ animationDelay: `${index * 100}ms` }}
@@ -94,7 +94,7 @@ const Programs = () => {
                             <div className="absolute -left-10 -bottom-10 w-32 h-32 bg-white/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-1000 animation-delay-200"></div>
 
                             {/* Content */}
-                            <div className="relative h-full p-10 flex flex-col justify-between z-10 text-white">
+                            <div className="relative h-full p-6 sm:p-8 md:p-10 flex flex-col justify-between z-10 text-white">
                                 <div>
                                     {/* Stats Badge */}
                                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 backdrop-blur-md border border-white/30 mb-6 text-sm font-bold">
@@ -107,7 +107,7 @@ const Programs = () => {
                                     </div>
 
                                     {/* Title */}
-                                    <h3 className={`font-display font-black mb-4 leading-tight ${program.size === 'large' ? 'text-5xl' : 'text-4xl'}`}>
+                                    <h3 className={`font-display font-black mb-4 leading-tight ${program.size === 'large' ? 'text-3xl sm:text-4xl md:text-5xl' : 'text-2xl sm:text-3xl md:text-4xl'}`}>
                                         {program.title}
                                     </h3>
 

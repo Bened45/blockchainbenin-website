@@ -1,46 +1,80 @@
 import React from 'react';
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import { Calendar, MapPin, Users, Clock } from 'lucide-react';
+import Section from '@/components/ui/Section';
+import { Calendar, MapPin, Users, Clock, ArrowRight, Sparkles, History } from 'lucide-react';
+import { Metadata } from 'next';
+import Link from 'next/link';
+
+export const metadata: Metadata = {
+    title: "Événements | Blockchain Bénin",
+    description: "Conférences, hackathons, meetups et ateliers. Restez informé des prochains événements blockchain au Bénin.",
+};
 
 const EventsPage = () => {
     const upcomingEvents = [
         {
             id: 1,
+            slug: 'stellar-pop-city',
             title: 'Stellar Pop City',
             date: '06 Décembre 2025',
+            day: '06',
+            month: 'Déc',
             time: '09:00 - 18:00',
             location: 'Cotonou, Bénin',
             subtitle: 'Blockchain BENIN Week 2026',
-            description: 'Une semaine dédiée à la blockchain avec conférences, ateliers et networking pour tous les passionnés de blockchain en Afrique.',
-            participants: '500+ participants attendus',
+            description: 'Une semaine dédiée à la blockchain avec conférences, ateliers et networking pour tous les passionnés.',
+            participants: '500+',
             type: 'Conférence',
-            status: 'upcoming'
+            color: 'primary',
+            featured: true,
         },
         {
             id: 2,
+            slug: 'crypto-treasury',
             title: 'Crypto Treasury',
             date: '06 Décembre 2025',
+            day: '06',
+            month: 'Déc',
             time: '10:00 - 17:00',
             location: 'Cotonou, Bénin',
-            subtitle: 'Crypto Treasury',
-            description: '48h pour développer des solutions blockchain innovantes pour l&apos;Afrique. Mentorat, prix et opportunités de networking.',
-            participants: '100+ développeurs',
+            subtitle: 'Hackathon Finance',
+            description: '48h pour développer des solutions blockchain innovantes pour l\'Afrique.',
+            participants: '100+',
             type: 'Hackathon',
-            status: 'upcoming'
+            color: 'secondary',
+            featured: false,
         },
         {
             id: 3,
+            slug: 'noel-en-or',
             title: 'Noël en Or',
-            date: '14 Décembre 2026',
-            time: 'Temps plein - 6 semaines',
+            date: '14 Décembre 2025',
+            day: '14',
+            month: 'Déc',
+            time: '6 semaines',
             location: 'Cotonou, Bénin',
-            subtitle: 'Bootcamp Développeur Blockchain',
-            description: 'Formation intensive de 6 semaines pour devenir développeur blockchain professionnel avec certification reconnue.',
-            participants: '50 places disponibles',
+            subtitle: 'Bootcamp Développeur',
+            description: 'Formation intensive pour devenir développeur blockchain professionnel.',
+            participants: '50',
             type: 'Formation',
-            status: 'upcoming'
-        }
+            color: 'accent',
+            featured: false,
+        },
+        {
+            id: 4,
+            slug: 'web3-meetup',
+            title: 'Web3 Meetup',
+            date: '20 Janvier 2026',
+            day: '20',
+            month: 'Jan',
+            time: '18:00 - 21:00',
+            location: 'Cotonou, Bénin',
+            subtitle: 'Networking Cotonou',
+            description: 'Rencontre mensuelle de la communauté blockchain béninoise.',
+            participants: '80+',
+            type: 'Meetup',
+            color: 'primary',
+            featured: false,
+        },
     ];
 
     const pastEvents = [
@@ -49,9 +83,8 @@ const EventsPage = () => {
             title: 'Campus Meetup Tour 2024',
             date: 'Octobre 2024',
             location: 'Universités du Bénin',
-            description: 'Tournée dans 10 universités pour sensibiliser les étudiants à la blockchain.',
+            description: 'Tournée dans 10 universités pour sensibiliser les étudiants.',
             participants: '500+ étudiants',
-            images: 3
         },
         {
             id: 2,
@@ -60,7 +93,6 @@ const EventsPage = () => {
             location: 'Cotonou, Bénin',
             description: '48h de développement intensif avec 15 projets présentés.',
             participants: '80 développeurs',
-            images: 5
         },
         {
             id: 3,
@@ -69,146 +101,224 @@ const EventsPage = () => {
             location: 'En ligne & Présentiel',
             description: 'Formation de 8 semaines sur le développement de smart contracts.',
             participants: '150 certifiés',
-            images: 4
-        }
+        },
     ];
 
-    return (
-        <main className="min-h-screen bg-white">
-            <Navbar />
+    const getColorClasses = (color: string) => {
+        switch (color) {
+            case 'primary':
+                return { bg: 'bg-primary-500', text: 'text-primary-400', border: 'border-primary-500/30' };
+            case 'secondary':
+                return { bg: 'bg-secondary-500', text: 'text-secondary-400', border: 'border-secondary-500/30' };
+            case 'accent':
+                return { bg: 'bg-accent-500', text: 'text-accent-400', border: 'border-accent-500/30' };
+            default:
+                return { bg: 'bg-primary-500', text: 'text-primary-400', border: 'border-primary-500/30' };
+        }
+    };
 
-            <div className="pt-24 pb-12">
-                {/* Header Section */}
-                <div className="container mx-auto px-4 mb-16 text-center">
-                    <h1 className="text-4xl md:text-5xl font-bold text-[#0066CC] mb-4">
-                        Événements Blockchain
+    return (
+        <main className="min-h-screen bg-dark-bg">
+            {/* Hero Section */}
+            <div className="relative pt-32 pb-16 overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-secondary-900/30 via-dark-bg to-primary-900/20 pointer-events-none" />
+                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-secondary-500/10 via-transparent to-transparent pointer-events-none" />
+
+                <div className="container mx-auto px-4 relative z-10 text-center">
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/10 border border-secondary/20 text-secondary-300 mb-8">
+                        <Calendar size={16} />
+                        <span className="text-sm font-medium">Calendrier 2025-2026</span>
+                    </div>
+
+                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-6">
+                        Événements <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary-400 to-primary-400">Blockchain</span>
                     </h1>
-                    <p className="text-gray-600 max-w-3xl mx-auto text-lg">
-                        Participez à nos conférences, hackathons, formations et rencontres pour développer vos compétences blockchain
+                    <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+                        Conférences, hackathons, formations et meetups. Rejoignez notre communauté lors de nos prochains événements.
                     </p>
                 </div>
+            </div>
 
-                {/* Upcoming Events Section */}
-                <div className="container mx-auto px-4 max-w-6xl mb-20">
-                    <h2 className="text-3xl font-bold text-[#4CAF50] mb-8">
-                        Événements à Venir
-                    </h2>
-
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        {upcomingEvents.map((event) => (
-                            <div
-                                key={event.id}
-                                className="bg-white rounded-2xl overflow-hidden shadow-lg border-2 border-gray-100 hover:shadow-xl transition-shadow flex flex-col"
-                            >
-                                {/* Green Header */}
-                                <div className="bg-[#4CAF50] p-6 text-white h-32 flex items-center justify-center">
-                                    <h3 className="text-2xl font-bold text-center">{event.title}</h3>
+            {/* Featured Event */}
+            {upcomingEvents.filter(e => e.featured).map((event) => (
+                <Section key={event.id} background="dark" padding="md" className="border-b border-white/5">
+                    <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-primary-900/50 to-secondary-900/50 border border-white/10">
+                        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-primary-500/20 via-transparent to-transparent" />
+                        <div className="relative p-8 md:p-12">
+                            <div className="flex flex-col lg:flex-row gap-8 items-center">
+                                {/* Date Badge */}
+                                <div className="flex-shrink-0 text-center">
+                                    <div className="w-24 h-24 rounded-2xl bg-primary-500 flex flex-col items-center justify-center text-white">
+                                        <span className="text-3xl font-bold">{event.day}</span>
+                                        <span className="text-sm uppercase">{event.month}</span>
+                                    </div>
                                 </div>
 
-                                {/* Body */}
-                                <div className="p-6 flex-grow flex flex-col">
-                                    <div className="text-[#4CAF50] font-bold text-sm mb-2">
-                                        {event.date}
+                                {/* Content */}
+                                <div className="flex-grow text-center lg:text-left">
+                                    <div className="flex items-center justify-center lg:justify-start gap-2 mb-2">
+                                        <Sparkles size={16} className="text-accent-400" />
+                                        <span className="text-accent-400 text-sm font-semibold uppercase tracking-wider">Événement vedette</span>
                                     </div>
-                                    <div className="text-[#0066CC] font-bold text-sm mb-4">
-                                        {event.subtitle}
-                                    </div>
+                                    <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-2">
+                                        {event.title}
+                                    </h2>
+                                    <p className="text-primary-300 font-medium mb-4">{event.subtitle}</p>
+                                    <p className="text-gray-300 mb-6 max-w-2xl">{event.description}</p>
 
-                                    <p className="text-gray-600 text-sm mb-6 flex-grow">
-                                        {event.description}
-                                    </p>
-
-                                    {/* Event Details */}
-                                    <div className="space-y-2 mb-6">
-                                        <div className="flex items-center gap-2 text-gray-500 text-xs">
-                                            <Clock size={14} />
+                                    <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 text-sm text-gray-400 mb-6">
+                                        <div className="flex items-center gap-2">
+                                            <Clock size={16} />
                                             <span>{event.time}</span>
                                         </div>
-                                        <div className="flex items-center gap-2 text-gray-500 text-xs">
-                                            <MapPin size={14} />
+                                        <div className="flex items-center gap-2">
+                                            <MapPin size={16} />
                                             <span>{event.location}</span>
                                         </div>
-                                        <div className="flex items-center gap-2 text-gray-500 text-xs">
-                                            <Users size={14} />
+                                        <div className="flex items-center gap-2">
+                                            <Users size={16} />
+                                            <span>{event.participants} participants attendus</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* CTA */}
+                                <div className="flex-shrink-0">
+                                    <Link href={`/evenements/${event.slug}`} className="bg-primary-500 hover:bg-primary-600 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:shadow-glow-primary flex items-center gap-2">
+                                        Voir les détails <ArrowRight size={20} />
+                                    </Link>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </Section>
+            ))}
+
+            {/* Upcoming Events Grid */}
+            <Section background="dark" padding="lg">
+                <div className="flex items-center gap-2 text-secondary-400 mb-2">
+                    <Calendar size={20} />
+                    <span className="text-sm font-semibold uppercase tracking-wider">À venir</span>
+                </div>
+                <h2 className="text-3xl font-display font-bold text-white mb-10">
+                    Prochains événements
+                </h2>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {upcomingEvents.filter(e => !e.featured).map((event) => {
+                        const colors = getColorClasses(event.color);
+                        return (
+                            <div
+                                key={event.id}
+                                className={`group glass rounded-2xl overflow-hidden border ${colors.border} hover:border-white/20 transition-all duration-300`}
+                            >
+                                {/* Header with date */}
+                                <div className="p-6 pb-0">
+                                    <div className="flex items-start justify-between mb-4">
+                                        <div className={`px-3 py-1 rounded-full text-xs font-semibold ${colors.bg} text-white`}>
+                                            {event.type}
+                                        </div>
+                                        <div className="text-right">
+                                            <div className={`text-2xl font-bold ${colors.text}`}>{event.day}</div>
+                                            <div className="text-sm text-gray-400">{event.month}</div>
+                                        </div>
+                                    </div>
+
+                                    <h3 className="text-xl font-bold text-white mb-1 group-hover:text-primary-300 transition-colors">
+                                        {event.title}
+                                    </h3>
+                                    <p className="text-gray-400 text-sm mb-3">{event.subtitle}</p>
+                                    <p className="text-gray-300 text-sm mb-4">{event.description}</p>
+                                </div>
+
+                                {/* Footer */}
+                                <div className="p-6 pt-0">
+                                    <div className="flex flex-wrap gap-4 text-xs text-gray-400 mb-4">
+                                        <div className="flex items-center gap-1">
+                                            <Clock size={12} />
+                                            <span>{event.time}</span>
+                                        </div>
+                                        <div className="flex items-center gap-1">
+                                            <MapPin size={12} />
+                                            <span>{event.location}</span>
+                                        </div>
+                                        <div className="flex items-center gap-1">
+                                            <Users size={12} />
                                             <span>{event.participants}</span>
                                         </div>
                                     </div>
 
-                                    <button className="w-full bg-[#0066CC] text-white py-3 px-6 rounded-full font-medium hover:bg-[#0052A3] transition-colors">
-                                        S&apos;inscrire →
-                                    </button>
+                                    <Link href={`/evenements/${event.slug}`} className="w-full bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 text-white py-3 rounded-xl font-medium transition-all duration-300 block text-center">
+                                        Voir les détails →
+                                    </Link>
                                 </div>
                             </div>
-                        ))}
-                    </div>
+                        );
+                    })}
                 </div>
+            </Section>
 
-                {/* Past Events Section */}
-                <div className="container mx-auto px-4 max-w-6xl mb-16">
-                    <h2 className="text-3xl font-bold text-gray-800 mb-8">
-                        Événements Passés
-                    </h2>
+            {/* Past Events */}
+            <Section background="dark" padding="lg" className="bg-dark-surface/30">
+                <div className="flex items-center gap-2 text-gray-400 mb-2">
+                    <History size={20} />
+                    <span className="text-sm font-semibold uppercase tracking-wider">Rétrospective</span>
+                </div>
+                <h2 className="text-3xl font-display font-bold text-white mb-10">
+                    Événements passés
+                </h2>
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        {pastEvents.map((event) => (
-                            <div
-                                key={event.id}
-                                className="bg-gray-50 rounded-2xl p-6 hover:bg-gray-100 transition-colors cursor-pointer"
-                            >
-                                <div className="flex items-center justify-between mb-4">
-                                    <span className="text-sm font-medium text-gray-500">
-                                        {event.date}
-                                    </span>
-                                    <span className="text-xs bg-white px-3 py-1 rounded-full text-gray-600">
-                                        {event.images} photos
-                                    </span>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    {pastEvents.map((event) => (
+                        <div
+                            key={event.id}
+                            className="glass rounded-2xl p-6 border border-white/5 hover:border-white/10 transition-all duration-300 cursor-pointer group"
+                        >
+                            <div className="text-sm text-gray-500 mb-3">{event.date}</div>
+                            <h3 className="text-lg font-bold text-white mb-2 group-hover:text-primary-300 transition-colors">
+                                {event.title}
+                            </h3>
+                            <p className="text-gray-400 text-sm mb-4">{event.description}</p>
+                            <div className="flex items-center gap-4 text-xs text-gray-500">
+                                <div className="flex items-center gap-1">
+                                    <MapPin size={12} />
+                                    <span>{event.location}</span>
                                 </div>
-
-                                <h3 className="text-xl font-bold text-gray-800 mb-2">
-                                    {event.title}
-                                </h3>
-
-                                <p className="text-gray-600 text-sm mb-4">
-                                    {event.description}
-                                </p>
-
-                                <div className="space-y-2">
-                                    <div className="flex items-center gap-2 text-gray-500 text-xs">
-                                        <MapPin size={14} />
-                                        <span>{event.location}</span>
-                                    </div>
-                                    <div className="flex items-center gap-2 text-gray-500 text-xs">
-                                        <Users size={14} />
-                                        <span>{event.participants}</span>
-                                    </div>
+                                <div className="flex items-center gap-1">
+                                    <Users size={12} />
+                                    <span>{event.participants}</span>
                                 </div>
                             </div>
-                        ))}
-                    </div>
+                        </div>
+                    ))}
                 </div>
+            </Section>
 
-                {/* CTA Section */}
-                <div className="container mx-auto px-4 max-w-4xl">
-                    <div className="bg-gradient-to-r from-[#0066CC] to-[#4CAF50] rounded-3xl p-12 text-center text-white">
-                        <h2 className="text-3xl font-bold mb-4">
+            {/* CTA Section */}
+            <Section background="dark" padding="lg">
+                <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-primary-600 to-secondary-600 p-10 md:p-16 text-center">
+                    <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-white/10 via-transparent to-transparent" />
+                    <div className="relative z-10">
+                        <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-4">
                             Ne manquez aucun événement
                         </h2>
-                        <p className="text-white/90 mb-8 max-w-2xl mx-auto">
-                            Abonnez-vous à notre newsletter pour recevoir les notifications de nos prochains événements blockchain.
+                        <p className="text-white/80 mb-8 max-w-xl mx-auto">
+                            Abonnez-vous pour recevoir les notifications de nos prochains événements blockchain.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <button className="px-8 py-4 bg-white text-[#0066CC] rounded-full font-bold hover:bg-gray-100 transition-colors">
-                                S&apos;abonner à la newsletter
-                            </button>
+                            <Link
+                                href="/rejoindre"
+                                className="px-8 py-4 bg-white text-primary-600 rounded-full font-bold hover:bg-gray-100 transition-colors"
+                            >
+                                Rejoindre la communauté
+                            </Link>
                             <button className="px-8 py-4 bg-transparent border-2 border-white text-white rounded-full font-bold hover:bg-white/10 transition-colors">
                                 Proposer un événement
                             </button>
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <Footer />
+            </Section>
         </main>
     );
 };

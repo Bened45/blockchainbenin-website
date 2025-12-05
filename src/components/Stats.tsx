@@ -43,7 +43,7 @@ const Stats = () => {
                         <div
                             key={index}
                             className={`
-                                relative group p-8 rounded-[2.5rem] bg-white border border-gray-100 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2
+                                relative group p-6 sm:p-8 rounded-[2rem] sm:rounded-[2.5rem] bg-white border border-gray-100 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2
                                 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}
                             `}
                             style={{ transitionDelay: `${index * 100}ms` }}

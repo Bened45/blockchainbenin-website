@@ -2,6 +2,12 @@ import React from 'react';
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { GraduationCap, Zap, Rocket, PresentationIcon, Check } from 'lucide-react';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: "Nos Programmes",
+    description: "Formations certifiantes, hackathons, bootcamps et ateliers. Découvrez nos programmes éducatifs pour maîtriser la blockchain au Bénin.",
+};
 
 const ProgramsPage = () => {
     const stats = [

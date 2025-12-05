@@ -6,11 +6,11 @@ import { ArrowUpRight } from 'lucide-react';
 
 const Gallery = () => {
     const galleryItems = [
-        { title: "Campus Meetup Tour", category: "Événement", image: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?q=80&w=2670&auto=format&fit=crop", size: "large" },
-        { title: "FAB Summit", category: "Conférence", image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=2670&auto=format&fit=crop", size: "small" },
-        { title: "Club Blockchain", category: "Communauté", image: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=2670&auto=format&fit=crop", size: "tall" },
-        { title: "Certification", category: "Formation", image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2670&auto=format&fit=crop", size: "small" },
-        { title: "BB Week", category: "Festival", image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=2670&auto=format&fit=crop", size: "wide" },
+        { title: "Campus Meetup Tour", category: "Événement", image: "/images/event-meetup.png", size: "large" },
+        { title: "FAB Summit", category: "Conférence", image: "/images/event-conference.png", size: "small" },
+        { title: "Club Blockchain", category: "Communauté", image: "/images/community-team.png", size: "tall" },
+        { title: "Certification", category: "Formation", image: "/images/event-workshop.png", size: "small" },
+        { title: "BB Week", category: "Festival", image: "/images/event-hackathon.png", size: "wide" },
     ];
 
     return (
@@ -21,7 +21,7 @@ const Gallery = () => {
                         Moments <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-400">Inoubliables</span>
                     </h2>
-                    <p className="text-gray-700 text-xl max-w-md">
+                    <p className="text-gray-400 text-lg md:text-xl max-w-md">
                         Plongez au cœur de l&apos;action. Revivez l&apos;énergie de notre communauté.
                     </p>
                 </div>
@@ -30,7 +30,7 @@ const Gallery = () => {
                 </Link>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[300px]">
+            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 auto-rows-[200px] sm:auto-rows-[250px] md:auto-rows-[300px]">
                 {galleryItems.map((item, index) => (
                     <Link
                         href="/galerie"

@@ -14,6 +14,7 @@ interface ButtonProps {
     leftIcon?: React.ReactNode;
     rightIcon?: React.ReactNode;
     target?: '_blank' | '_self';
+    type?: 'button' | 'submit' | 'reset';
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -28,6 +29,7 @@ const Button: React.FC<ButtonProps> = ({
     leftIcon,
     rightIcon,
     target = '_self',
+    type = 'button',
 }) => {
     const baseStyles = "inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100";
 
@@ -71,6 +73,7 @@ const Button: React.FC<ButtonProps> = ({
 
     return (
         <button
+            type={type}
             onClick={onClick}
             className={combinedClassName}
             disabled={disabled || loading}

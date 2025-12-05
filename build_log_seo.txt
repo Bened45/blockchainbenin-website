@@ -1,0 +1,49 @@
+
+> blockchainbenin-website@0.1.0 build
+> next build
+
+ ⚠ Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of /home/bened/pnpm-lock.yaml as the root directory.
+ To silence this warning, set `outputFileTracingRoot` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/output#caveats for more information.
+ Detected additional lockfiles: 
+   * /home/bened/project/blockchain-benin/pnpm-lock.yaml
+
+   ▲ Next.js 15.5.6
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 7.3s
+   Linting and checking validity of types ...
+
+./src/components/Stats.tsx
+26:47  Warning: The ref value 'sectionRef.current' will likely have changed by the time this effect cleanup function runs. If this ref points to a node rendered by React, copy 'sectionRef.current' to a variable inside the effect, and use that variable in the cleanup function.  react-hooks/exhaustive-deps
+
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/app/api-reference/config/eslint#disabling-rules
+   Collecting page data ...
+   Generating static pages (0/12) ...
+   Generating static pages (3/12) 
+   Generating static pages (6/12) 
+   Generating static pages (9/12) 
+ ✓ Generating static pages (12/12)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                                 Size  First Load JS
+┌ ○ /                                    12.3 kB         122 kB
+├ ○ /_not-found                            997 B         103 kB
+├ ○ /about                               11.9 kB         122 kB
+├ ○ /club-blockchain                       172 B         110 kB
+├ ○ /evenements                          3.04 kB         113 kB
+├ ○ /galerie                             3.04 kB         113 kB
+├ ○ /programmes                          3.04 kB         113 kB
+├ ○ /ressources                          3.04 kB         113 kB
+├ ○ /robots.txt                            127 B         102 kB
+└ ○ /sitemap.xml                           127 B         102 kB
++ First Load JS shared by all             102 kB
+  ├ chunks/303-3798509c41bb1499.js       45.8 kB
+  ├ chunks/65853ea0-e77080bd4ed7c8e9.js  54.2 kB
+  └ other shared chunks (total)          1.93 kB
+
+
+○  (Static)  prerendered as static content
+

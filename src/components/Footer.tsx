@@ -4,14 +4,36 @@ import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin } from 'luc
 import Image from 'next/image';
 
 const Footer = () => {
-    return (
-        <footer className="bg-dark-bg text-white pt-24 pb-12 border-t border-white/5">
-            <div className="container mx-auto px-4">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
-                    {/* Brand */}
-                    <div className="space-y-6">
-                        <Link href="/" className="flex items-center gap-2">
+    const navigationLinks = [
+        { name: 'Accueil', href: '/' },
+        { name: 'À Propos', href: '/about' },
+        { name: 'Programmes', href: '/programmes' },
+        { name: 'Événements', href: '/evenements' },
+        { name: 'Galerie', href: '/galerie' },
+        { name: 'Ressources', href: '/ressources' },
+    ];
 
+    const initiativeLinks = [
+        { name: 'Faire un don', href: '/don' },
+        { name: 'Club Blockchain', href: '/club-blockchain' },
+        { name: 'Nous soutenir', href: '/soutenir' },
+        { name: 'Rejoindre', href: '/rejoindre' },
+    ];
+
+    const socialLinks = [
+        { Icon: Facebook, href: 'https://facebook.com/blockchainbenin', label: 'Facebook' },
+        { Icon: Twitter, href: 'https://twitter.com/blockchainbenin', label: 'Twitter' },
+        { Icon: Linkedin, href: 'https://linkedin.com/company/blockchainbenin', label: 'LinkedIn' },
+        { Icon: Instagram, href: 'https://instagram.com/blockchainbenin', label: 'Instagram' },
+    ];
+
+    return (
+        <footer className="bg-dark-bg text-white pt-16 sm:pt-20 md:pt-24 pb-8 sm:pb-12 border-t border-white/5">
+            <div className="container mx-auto px-4">
+                <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-12 md:mb-20">
+                    {/* Brand */}
+                    <div className="col-span-2 sm:col-span-2 md:col-span-1 lg:col-span-1 space-y-6">
+                        <Link href="/" className="flex items-center gap-2">
                             <div className="w-10 h-10 lg:w-32 lg:h-32 relative flex-shrink-0">
                                 <Image
                                     src="/logo2.png"
@@ -26,8 +48,15 @@ const Footer = () => {
                             Pionniers de l&apos;éducation et de l&apos;innovation blockchain en Afrique francophone. Construisons ensemble un avenir décentralisé.
                         </p>
                         <div className="flex gap-4">
-                            {[Facebook, Twitter, Linkedin, Instagram].map((Icon, i) => (
-                                <a key={i} href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary hover:text-white transition-all duration-300">
+                            {socialLinks.map(({ Icon, href, label }) => (
+                                <a
+                                    key={label}
+                                    href={href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label={label}
+                                    className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary hover:text-white hover:scale-110 transition-all duration-300"
+                                >
                                     <Icon size={20} />
                                 </a>
                             ))}
@@ -38,11 +67,11 @@ const Footer = () => {
                     <div>
                         <h4 className="font-display font-bold text-xl mb-6">Navigation</h4>
                         <ul className="space-y-4">
-                            {['Accueil', 'À Propos', 'Programmes', 'Événements', 'Galerie', 'Contact'].map((item, i) => (
-                                <li key={i}>
-                                    <Link href="#" className="text-gray-300 hover:text-primary transition-colors flex items-center gap-2 group">
+                            {navigationLinks.map((link) => (
+                                <li key={link.name}>
+                                    <Link href={link.href} className="text-gray-300 hover:text-primary transition-colors flex items-center gap-2 group">
                                         <span className="w-1.5 h-1.5 rounded-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></span>
-                                        {item}
+                                        {link.name}
                                     </Link>
                                 </li>
                             ))}
@@ -53,11 +82,11 @@ const Footer = () => {
                     <div>
                         <h4 className="font-display font-bold text-xl mb-6">Initiatives</h4>
                         <ul className="space-y-4">
-                            {['Blockchain Charity', 'BB Week', 'Formations Certifiantes', 'Carrières', 'Devenir Partenaire'].map((item, i) => (
-                                <li key={i}>
-                                    <Link href="#" className="text-gray-300 hover:text-secondary transition-colors flex items-center gap-2 group">
+                            {initiativeLinks.map((link) => (
+                                <li key={link.name}>
+                                    <Link href={link.href} className="text-gray-300 hover:text-secondary transition-colors flex items-center gap-2 group">
                                         <span className="w-1.5 h-1.5 rounded-full bg-secondary opacity-0 group-hover:opacity-100 transition-opacity"></span>
-                                        {item}
+                                        {link.name}
                                     </Link>
                                 </li>
                             ))}
@@ -74,11 +103,15 @@ const Footer = () => {
                             </li>
                             <li className="flex items-center gap-4 text-gray-400">
                                 <Phone className="text-primary flex-shrink-0" />
-                                <span>+229 01 65 44 93 07</span>
+                                <a href="tel:+22901654493 07" className="hover:text-primary transition-colors">
+                                    +229 01 65 44 93 07
+                                </a>
                             </li>
                             <li className="flex items-center gap-4 text-gray-400">
                                 <Mail className="text-primary flex-shrink-0" />
-                                <span>contact@blockchainbenin.com</span>
+                                <a href="mailto:contact@blockchainbenin.com" className="hover:text-primary transition-colors">
+                                    contact@blockchainbenin.com
+                                </a>
                             </li>
                         </ul>
                     </div>
@@ -87,9 +120,9 @@ const Footer = () => {
                 <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-400">
                     <p>&copy; {new Date().getFullYear()} Blockchain BENIN. Tous droits réservés.</p>
                     <div className="flex gap-8">
-                        <a href="#" className="hover:text-white transition-colors">Confidentialité</a>
-                        <a href="#" className="hover:text-white transition-colors">Conditions</a>
-                        <a href="#" className="hover:text-white transition-colors">Mentions Légales</a>
+                        <Link href="/confidentialite" className="hover:text-white transition-colors">Confidentialité</Link>
+                        <Link href="/conditions" className="hover:text-white transition-colors">Conditions</Link>
+                        <Link href="/mentions-legales" className="hover:text-white transition-colors">Mentions Légales</Link>
                     </div>
                 </div>
             </div>

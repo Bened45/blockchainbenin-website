@@ -16,10 +16,14 @@ const Navbar = () => {
     useEffect(() => {
         const handleScroll = () => {
             setScrolled(window.scrollY > 20);
+            // Close mobile menu on scroll
+            if (isOpen && window.scrollY > 50) {
+                setIsOpen(false);
+            }
         };
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+    }, [isOpen]);
 
     const navLinks = [
         { name: 'Accueil', href: '/' },
@@ -40,25 +44,25 @@ const Navbar = () => {
             className={`
                  fixed w-full z-50 transition-all duration-300
     ${scrolled
-        ? 'bg-[#003E66] shadow-2xl border-b border-[#003E66]'
-        : 'bg-[#003E66] border-b border--[#003E66]'
-    }
+                    ? 'bg-dark-bg/80 backdrop-blur-md shadow-lg border-b border-white/10'
+                    : 'bg-transparent border-b border-transparent'
+                }
             `}
         >
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex items-center justify-between h-20">
-                    {/* Logo */}
-                    <div className="flex-shrink-0">
+                <div className="flex items-center justify-between h-20 lg:h-auto relative">
+                    {/* Logo - Absolutely centered on mobile, flex on desktop */}
+                    <div className="absolute left-1/2 -translate-x-1/2 lg:static lg:translate-x-0 lg:flex-shrink-0">
                         <Link href="/" className="flex items-center gap-3 group">
-                            <div className="w-10 h-10 lg:w-32 lg:h-32 relative flex-shrink-0">
-                            <Image
-                                src="/logo.png"
-                                alt="Blockchain Bénin Charity Logo"
-                                fill
-                                className="object-contain"
-                                priority
-                            />
-                        </div>
+                            <div className="w-20 h-20 sm:w-24 sm:h-24 lg:w-32 lg:h-32 relative flex-shrink-0">
+                                <Image
+                                    src="/logo.png"
+                                    alt="Blockchain Bénin Charity Logo"
+                                    fill
+                                    className="object-contain"
+                                    priority
+                                />
+                            </div>
                         </Link>
                     </div>
 
@@ -93,7 +97,7 @@ const Navbar = () => {
                     {/* CTA Button Desktop */}
                     <div className="hidden lg:block">
                         <Button
-                            href="#join"
+                            href="/rejoindre"
                             variant="primary"
                             size="sm"
                             className="shadow-glow-primary"
@@ -102,18 +106,14 @@ const Navbar = () => {
                         </Button>
                     </div>
 
-                    {/* Mobile menu button */}
-                    <div className="flex lg:hidden">
+                    {/* Mobile Menu Button - Right side */}
+                    <div className="lg:hidden absolute right-4">
                         <button
                             onClick={() => setIsOpen(!isOpen)}
-                            className="inline-flex items-center justify-center p-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/10 focus:outline-none transition-colors"
+                            className="text-white p-2 rounded-lg hover:bg-white/10 transition-colors"
+                            aria-label="Toggle menu"
                         >
-                            <span className="sr-only">Open main menu</span>
-                            {!isOpen ? (
-                                <Menu className="block h-6 w-6" />
-                            ) : (
-                                <X className="block h-6 w-6" />
-                            )}
+                            {isOpen ? <X size={24} /> : <Menu size={24} />}
                         </button>
                     </div>
                 </div>
@@ -146,7 +146,7 @@ const Navbar = () => {
                         ))}
                         <div className="pt-4">
                             <Button
-                                href="#join"
+                                href="/rejoindre"
                                 variant="primary"
                                 className="w-full justify-center"
                             >

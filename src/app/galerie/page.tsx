@@ -1,7 +1,13 @@
 import React from 'react';
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Calendar, MapPin, Users } from 'lucide-react';
+import { Calendar, MapPin, Users, ArrowUpRight } from 'lucide-react';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: "Galerie",
+    description: "Revivez les moments forts de la communauté Blockchain Bénin en images. Hackathons, conférences et rencontres.",
+};
 
 const GalleryPage = () => {
     const events = [

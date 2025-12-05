@@ -40,7 +40,7 @@ const MissionVision = () => {
                     <div className="lg:w-1/2 relative">
                         <div className="relative z-10 rounded-[3rem] overflow-hidden border-4 border-white/5 shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-500">
                             <Image
-                                src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=2940&auto=format&fit=crop"
+                                src="/images/mission-training.png"
                                 alt="Mission"
                                 width={600}
                                 height={400}
@@ -81,7 +81,7 @@ const MissionVision = () => {
                     <div className="lg:w-1/2 relative">
                         <div className="relative z-10 rounded-[3rem] overflow-hidden border-4 border-white/5 shadow-2xl transform -rotate-3 hover:rotate-0 transition-transform duration-500">
                             <Image
-                                src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=2565&auto=format&fit=crop"
+                                src="/images/vision-future.png"
                                 alt="Vision"
                                 width={600}
                                 height={400}
