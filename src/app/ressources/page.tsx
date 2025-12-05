@@ -20,111 +20,111 @@ interface Category {
     resources: Resource[];
 }
 
+const categories: Category[] = [
+    {
+        id: 'documentation',
+        icon: BookOpen,
+        title: 'Documentation',
+        description: 'Guides techniques, whitepapers et documentation officielle',
+        color: '#0066CC',
+        resources: [
+            { title: 'Guide Débutant Blockchain', type: 'PDF', difficulty: 'Débutant' },
+            { title: 'Ethereum Documentation', type: 'Web', difficulty: 'Intermédiaire' },
+            { title: 'Solidity by Example', type: 'Web', difficulty: 'Avancé' }
+        ]
+    },
+    {
+        id: 'videos',
+        icon: Video,
+        title: 'Tutoriels Vidéo',
+        description: 'Cours vidéo, webinars et conférences enregistrées',
+        color: '#4CAF50',
+        resources: [
+            { title: 'Introduction à la Blockchain', type: 'Vidéo', difficulty: 'Débutant' },
+            { title: 'Smart Contracts avec Solidity', type: 'Vidéo', difficulty: 'Intermédiaire' },
+            { title: 'Architecture DeFi Avancée', type: 'Vidéo', difficulty: 'Avancé' }
+        ]
+    },
+    {
+        id: 'articles',
+        icon: FileText,
+        title: 'Articles & Blog',
+        description: 'Articles de fond, actualités et analyses blockchain',
+        color: '#FCD34D',
+        resources: [
+            { title: "L'avenir de la DeFi en Afrique", type: 'Article', difficulty: 'Tout niveau' },
+            { title: 'NFT et propriété numérique', type: 'Article', difficulty: 'Débutant' },
+            { title: 'Scalabilité blockchain', type: 'Article', difficulty: 'Avancé' }
+        ]
+    },
+    {
+        id: 'tools',
+        icon: Wrench,
+        title: 'Outils & Liens',
+        description: 'Outils de développement, explorateurs et wallets',
+        color: '#9C27B0',
+        resources: [
+            { title: 'Remix IDE', type: 'Outil', difficulty: 'Développeur' },
+            { title: 'Etherscan Explorer', type: 'Outil', difficulty: 'Tout niveau' },
+            { title: 'MetaMask Wallet', type: 'Outil', difficulty: 'Débutant' }
+        ]
+    },
+    {
+        id: 'faq',
+        icon: HelpCircle,
+        title: 'FAQ',
+        description: 'Questions fréquentes sur la blockchain et nos programmes',
+        color: '#FF5722',
+        resources: [
+            { title: "Qu'est-ce que la blockchain ?", type: 'FAQ', difficulty: 'Débutant' },
+            { title: 'Comment commencer à apprendre ?', type: 'FAQ', difficulty: 'Débutant' },
+            { title: 'Quelle est la différence entre Bitcoin et Ethereum ?', type: 'FAQ', difficulty: 'Débutant' }
+        ]
+    }
+];
+
+const featuredResources = [
+    {
+        title: 'Guide Complet : Introduction à la Blockchain',
+        category: 'Documentation',
+        categoryColor: '#0066CC',
+        difficulty: 'Débutant',
+        description: 'Un guide complet pour comprendre les bases de la blockchain, la cryptographie et les applications décentralisées.',
+        type: 'PDF',
+        size: '2.5 MB'
+    },
+    {
+        title: 'Série Vidéo : Développement Smart Contracts',
+        category: 'Tutoriels Vidéo',
+        categoryColor: '#4CAF50',
+        difficulty: 'Intermédiaire',
+        description: 'Apprenez à créer vos premiers smart contracts avec Solidity à travers cette série de 10 vidéos.',
+        type: 'Vidéo',
+        size: '5h 30min'
+    },
+    {
+        title: 'La Révolution DeFi en Afrique',
+        category: 'Articles & Blog',
+        categoryColor: '#FCD34D',
+        difficulty: 'Tout niveau',
+        description: "Analyse approfondie de l'impact de la finance décentralisée sur le continent africain.",
+        type: 'Article',
+        size: '15 min'
+    },
+    {
+        title: 'Kit de Développement Blockchain',
+        category: 'Outils & Liens',
+        categoryColor: '#9C27B0',
+        difficulty: 'Développeur',
+        description: "Collection d'outils essentiels pour démarrer le développement blockchain : IDE, frameworks, librairies.",
+        type: 'Collection',
+        size: '12 outils'
+    }
+];
+
 const ResourcesPage = () => {
     const [searchQuery, setSearchQuery] = useState('');
     const [activeCategory, setActiveCategory] = useState<string | null>(null);
-
-    const categories: Category[] = [
-        {
-            id: 'documentation',
-            icon: BookOpen,
-            title: 'Documentation',
-            description: 'Guides techniques, whitepapers et documentation officielle',
-            color: '#0066CC',
-            resources: [
-                { title: 'Guide Débutant Blockchain', type: 'PDF', difficulty: 'Débutant' },
-                { title: 'Ethereum Documentation', type: 'Web', difficulty: 'Intermédiaire' },
-                { title: 'Solidity by Example', type: 'Web', difficulty: 'Avancé' }
-            ]
-        },
-        {
-            id: 'videos',
-            icon: Video,
-            title: 'Tutoriels Vidéo',
-            description: 'Cours vidéo, webinars et conférences enregistrées',
-            color: '#4CAF50',
-            resources: [
-                { title: 'Introduction à la Blockchain', type: 'Vidéo', difficulty: 'Débutant' },
-                { title: 'Smart Contracts avec Solidity', type: 'Vidéo', difficulty: 'Intermédiaire' },
-                { title: 'Architecture DeFi Avancée', type: 'Vidéo', difficulty: 'Avancé' }
-            ]
-        },
-        {
-            id: 'articles',
-            icon: FileText,
-            title: 'Articles & Blog',
-            description: 'Articles de fond, actualités et analyses blockchain',
-            color: '#FCD34D',
-            resources: [
-                { title: "L'avenir de la DeFi en Afrique", type: 'Article', difficulty: 'Tout niveau' },
-                { title: 'NFT et propriété numérique', type: 'Article', difficulty: 'Débutant' },
-                { title: 'Scalabilité blockchain', type: 'Article', difficulty: 'Avancé' }
-            ]
-        },
-        {
-            id: 'tools',
-            icon: Wrench,
-            title: 'Outils & Liens',
-            description: 'Outils de développement, explorateurs et wallets',
-            color: '#9C27B0',
-            resources: [
-                { title: 'Remix IDE', type: 'Outil', difficulty: 'Développeur' },
-                { title: 'Etherscan Explorer', type: 'Outil', difficulty: 'Tout niveau' },
-                { title: 'MetaMask Wallet', type: 'Outil', difficulty: 'Débutant' }
-            ]
-        },
-        {
-            id: 'faq',
-            icon: HelpCircle,
-            title: 'FAQ',
-            description: 'Questions fréquentes sur la blockchain et nos programmes',
-            color: '#FF5722',
-            resources: [
-                { title: "Qu'est-ce que la blockchain ?", type: 'FAQ', difficulty: 'Débutant' },
-                { title: 'Comment commencer à apprendre ?', type: 'FAQ', difficulty: 'Débutant' },
-                { title: 'Quelle est la différence entre Bitcoin et Ethereum ?', type: 'FAQ', difficulty: 'Débutant' }
-            ]
-        }
-    ];
-
-    const featuredResources = [
-        {
-            title: 'Guide Complet : Introduction à la Blockchain',
-            category: 'Documentation',
-            categoryColor: '#0066CC',
-            difficulty: 'Débutant',
-            description: 'Un guide complet pour comprendre les bases de la blockchain, la cryptographie et les applications décentralisées.',
-            type: 'PDF',
-            size: '2.5 MB'
-        },
-        {
-            title: 'Série Vidéo : Développement Smart Contracts',
-            category: 'Tutoriels Vidéo',
-            categoryColor: '#4CAF50',
-            difficulty: 'Intermédiaire',
-            description: 'Apprenez à créer vos premiers smart contracts avec Solidity à travers cette série de 10 vidéos.',
-            type: 'Vidéo',
-            size: '5h 30min'
-        },
-        {
-            title: 'La Révolution DeFi en Afrique',
-            category: 'Articles & Blog',
-            categoryColor: '#FCD34D',
-            difficulty: 'Tout niveau',
-            description: "Analyse approfondie de l'impact de la finance décentralisée sur le continent africain.",
-            type: 'Article',
-            size: '15 min'
-        },
-        {
-            title: 'Kit de Développement Blockchain',
-            category: 'Outils & Liens',
-            categoryColor: '#9C27B0',
-            difficulty: 'Développeur',
-            description: "Collection d'outils essentiels pour démarrer le développement blockchain : IDE, frameworks, librairies.",
-            type: 'Collection',
-            size: '12 outils'
-        }
-    ];
 
     // Filter categories based on search
     const filteredCategories = useMemo(() => {
@@ -136,7 +136,7 @@ const ResourcesPage = () => {
             cat.description.toLowerCase().includes(query) ||
             cat.resources.some(r => r.title.toLowerCase().includes(query))
         );
-    }, [searchQuery, categories]);
+    }, [searchQuery]);
 
     // Filter featured resources based on search
     const filteredFeatured = useMemo(() => {

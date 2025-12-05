@@ -49,7 +49,7 @@ const Hero = () => {
                             rightIcon={<ArrowRight size={20} />}
                             className="w-full sm:w-auto group relative overflow-hidden"
                         >
-                            <span className="relative z-10">Rejoindre l'association</span>
+                            <span className="relative z-10">Rejoindre l&apos;association</span>
                             <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
                         </Button>
                         <Button
@@ -294,6 +294,7 @@ const AnimatedStat = ({ value, label, delay }: { value: string; label: string; d
     const suffix = value.replace(/[\d]/g, '');
 
     useEffect(() => {
+        const currentRef = ref.current;
         const observer = new IntersectionObserver(
             ([entry]) => {
                 if (entry.isIntersecting) {
@@ -303,13 +304,13 @@ const AnimatedStat = ({ value, label, delay }: { value: string; label: string; d
             { threshold: 0.1 }
         );
 
-        if (ref.current) {
-            observer.observe(ref.current);
+        if (currentRef) {
+            observer.observe(currentRef);
         }
 
         return () => {
-            if (ref.current) {
-                observer.unobserve(ref.current);
+            if (currentRef) {
+                observer.unobserve(currentRef);
             }
         };
     }, []);
