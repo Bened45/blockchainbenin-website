@@ -4,14 +4,22 @@ import Image from 'next/image';
 import Section from './ui/Section';
 import { ArrowUpRight } from 'lucide-react';
 
-const Gallery = () => {
-    const galleryItems = [
-        { title: "Campus Meetup Tour", category: "Événement", image: "/images/event-meetup.png", size: "large" },
-        { title: "FAB Summit", category: "Conférence", image: "/images/event-conference.png", size: "small" },
-        { title: "Club Blockchain", category: "Communauté", image: "/images/community-team.png", size: "tall" },
-        { title: "Certification", category: "Formation", image: "/images/event-workshop.png", size: "small" },
-        { title: "BB Week", category: "Festival", image: "/images/event-hackathon.png", size: "wide" },
-    ];
+type GalleryItem = {
+    slug: string;
+    entry: {
+        title: string;
+        category: string;
+        image: string | null;
+        size: string;
+        date: string | null;
+    };
+};
+
+type GalleryProps = {
+    items: GalleryItem[];
+};
+
+const Gallery = ({ items }: GalleryProps) => {
 
     return (
         <Section id="gallery" className="bg-dark-bg text-white py-32">
@@ -31,28 +39,30 @@ const Gallery = () => {
             </div>
 
             <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 auto-rows-[200px] sm:auto-rows-[250px] md:auto-rows-[300px]">
-                {galleryItems.map((item, index) => (
+                {items.map((item, index) => (
                     <Link
                         href="/galerie"
                         key={index}
                         className={`
                             group relative rounded-3xl overflow-hidden cursor-pointer block
-                            ${item.size === 'large' ? 'md:col-span-2 md:row-span-2' : ''}
-                            ${item.size === 'wide' ? 'md:col-span-2' : ''}
-                            ${item.size === 'tall' ? 'md:row-span-2' : ''}
+                            ${item.entry.size === 'large' ? 'md:col-span-2 md:row-span-2' : ''}
+                            ${item.entry.size === 'wide' ? 'md:col-span-2' : ''}
+                            ${item.entry.size === 'tall' ? 'md:row-span-2' : ''}
                         `}
                     >
-                        <Image
-                            src={item.image}
-                            alt={item.title}
-                            fill
-                            className="object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
-                        />
+                        {item.entry.image && (
+                            <Image
+                                src={item.entry.image}
+                                alt={item.entry.title}
+                                fill
+                                className="object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                            />
+                        )}
                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
                         <div className="absolute bottom-0 left-0 p-8 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
-                            <span className="text-primary-400 text-sm font-bold uppercase tracking-wider mb-2 block">{item.category}</span>
-                            <h3 className="text-2xl font-bold text-white">{item.title}</h3>
+                            <span className="text-primary-400 text-sm font-bold uppercase tracking-wider mb-2 block">{item.entry.category}</span>
+                            <h3 className="text-2xl font-bold text-white">{item.entry.title}</h3>
                         </div>
                     </Link>
                 ))}

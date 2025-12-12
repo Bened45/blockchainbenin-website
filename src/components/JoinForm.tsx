@@ -24,7 +24,7 @@ const JoinForm = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* Name */}
                 <div className="space-y-2">
-                    <label htmlFor="name" className="text-sm font-medium text-gray-300">Nom complet</label>
+                    <label htmlFor="name" className="text-sm font-medium text-gray-800">Nom complet</label>
                     <div className="relative">
                         <User className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500" size={20} />
                         <input
@@ -41,7 +41,7 @@ const JoinForm = () => {
 
                 {/* Email */}
                 <div className="space-y-2">
-                    <label htmlFor="email" className="text-sm font-medium text-gray-300">Email</label>
+                    <label htmlFor="email" className="text-sm font-medium text-gray-800">Email</label>
                     <div className="relative">
                         <Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500" size={20} />
                         <input
@@ -59,7 +59,7 @@ const JoinForm = () => {
 
             {/* Type of Membership */}
             <div className="space-y-2">
-                <label className="text-sm font-medium text-gray-300">Je souhaite rejoindre en tant que</label>
+                <label className="text-sm font-medium text-gray-800">Je souhaite rejoindre en tant que</label>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                     {[
                         { id: 'member', label: 'Membre', icon: User },
@@ -73,7 +73,7 @@ const JoinForm = () => {
                                 cursor-pointer rounded-xl p-4 border transition-all duration-300 flex flex-col items-center gap-2
                                 ${formData.type === type.id
                                     ? 'bg-primary/20 border-primary text-white'
-                                    : 'bg-white/5 border-white/10 text-gray-400 hover:bg-white/10 hover:border-white/20'
+                                    : 'bg-white/5 border-white/10 text-gray-700 hover:bg-white/10 hover:border-white/20'
                                 }
                             `}
                         >
@@ -86,7 +86,7 @@ const JoinForm = () => {
 
             {/* Message */}
             <div className="space-y-2">
-                <label htmlFor="message" className="text-sm font-medium text-gray-300">Message (Optionnel)</label>
+                <label htmlFor="message" className="text-sm font-medium text-gray-800">Message (Optionnel)</label>
                 <div className="relative">
                     <MessageSquare className="absolute left-4 top-4 text-gray-500" size={20} />
                     <textarea

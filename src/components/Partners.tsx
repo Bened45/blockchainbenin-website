@@ -42,7 +42,7 @@ const Partners = () => {
                     {[...partners, ...partners].map((partner, index) => (
                         <div
                             key={index}
-                            className="relative w-32 h-20 flex-shrink-0 grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100 hover:scale-110"
+                            className="relative w-32 h-20 flex-shrink-0 transition-all duration-300 hover:scale-110"
                         >
                             <Image
                                 src={partner.src}

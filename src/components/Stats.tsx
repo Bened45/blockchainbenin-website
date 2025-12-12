@@ -50,17 +50,17 @@ const Stats = () => {
                             style={{ transitionDelay: `${index * 100}ms` }}
                         >
                             {/* Gradient Background on Hover */}
-                            <div className={`absolute inset-0 bg-gradient-to-br ${stat.color} opacity-0 group-hover:opacity-5 rounded-[2.5rem] transition-opacity duration-500`}></div>
+                            <div className={`absolute inset-0 bg-gradient-to-br ${stat.color} opacity-0 group-hover:opacity-100 rounded-[2.5rem] transition-opacity duration-500`}></div>
 
                             {/* Border Gradient */}
                             <div className={`absolute inset-0 rounded-[2.5rem] border-2 border-transparent bg-gradient-to-br ${stat.color} opacity-0 group-hover:opacity-100 [mask:linear-gradient(#fff_0_0)_padding-box,linear-gradient(#fff_0_0)] [-webkit-mask-composite:xor] [mask-composite:exclude] pointer-events-none transition-opacity duration-500`}></div>
 
                             <div className="relative z-10 text-center">
-                                <div className={`text-5xl md:text-6xl font-display font-bold bg-gradient-to-br ${stat.color} bg-clip-text text-transparent mb-4`}>
+                                <div className={`text-5xl md:text-6xl font-display font-bold bg-gradient-to-br ${stat.color} bg-clip-text text-transparent group-hover:text-white group-hover:bg-none transition-all duration-500 mb-4`}>
                                     {isVisible ? <Counter end={stat.number} duration={2000} /> : 0}
                                     {stat.suffix}
                                 </div>
-                                <div className="text-gray-500 font-medium text-lg uppercase tracking-wider">
+                                <div className="text-gray-500 group-hover:text-white/90 font-medium text-lg uppercase tracking-wider transition-colors duration-500">
                                     {stat.label}
                                 </div>
                             </div>
