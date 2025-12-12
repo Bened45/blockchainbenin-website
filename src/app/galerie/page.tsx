@@ -1,8 +1,15 @@
 import { reader } from '@/lib/keystatic';
 import Link from 'next/link';
 import Image from 'next/image';
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import { Users } from 'lucide-react';
+import { Metadata } from 'next';
 
-// ... metadata ...
+export const metadata: Metadata = {
+    title: "Galerie",
+    description: "Revivez les moments forts de la communauté Blockchain Bénin en images. Hackathons, conférences et rencontres.",
+};
 
 const getColorForCategory = (category: string) => {
     switch (category) {
