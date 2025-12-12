@@ -3,27 +3,24 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Section from './ui/Section';
 import { ArrowUpRight } from 'lucide-react';
+import { reader } from '@/lib/keystatic';
 
-type GalleryItem = {
-    slug: string;
-    entry: {
-        title: string;
-        category: string;
-        image: string | null;
-        size: string;
-        date: string | null;
-    };
-};
-
-type GalleryProps = {
-    items: GalleryItem[];
-};
-
-const Gallery = ({ items }: GalleryProps) => {
+const Gallery = () => {
+    const galleryItems = [
+        { title: "Campus Meetup Tour", category: "Événement", image: "/images/event-meetup.png", size: "large" },
+        { title: "FAB Summit", category: "Conférence", image: "/images/event-conference.png", size: "small" },
+        { title: "Club Blockchain", category: "Communauté", image: "/images/community-team.png", size: "tall" },
+        { title: "Certification", category: "Formation", image: "/images/event-workshop.png", size: "small" },
+        { title: "BB Week", category: "Festival", image: "/images/event-hackathon.png", size: "wide" },
+    ];
 
     return (
-        <Section id="gallery" className="bg-dark-bg text-white py-32">
-            <div className="container mx-auto px-4 mb-20 flex flex-col md:flex-row justify-between items-end">
+        <Section id="gallery" className="relative bg-dark-bg text-white py-32 overflow-hidden">
+            {/* Background Blobs */}
+            <div className="absolute top-20 right-0 w-96 h-96 bg-primary/10 rounded-full blur-[100px]"></div>
+            <div className="absolute bottom-20 left-0 w-96 h-96 bg-secondary/10 rounded-full blur-[100px]"></div>
+
+            <div className="container mx-auto px-4 mb-20 flex flex-col md:flex-row justify-between items-end relative z-10">
                 <div>
                     <h2 className="text-5xl md:text-7xl font-display font-bold mb-6">
                         Moments <br />
@@ -50,14 +47,12 @@ const Gallery = ({ items }: GalleryProps) => {
                             ${item.entry.size === 'tall' ? 'md:row-span-2' : ''}
                         `}
                     >
-                        {item.entry.image && (
-                            <Image
-                                src={item.entry.image}
-                                alt={item.entry.title}
-                                fill
-                                className="object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
-                            />
-                        )}
+                        <Image
+                            src={item.image}
+                            alt={item.title}
+                            fill
+                            className="object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                        />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
                         <div className="absolute bottom-0 left-0 p-8 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">

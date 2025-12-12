@@ -1,39 +1,16 @@
-"use client";
+import React from 'react';
+import { reader } from '@/lib/keystatic';
+import StatsClient from './StatsClient';
 
-import React, { useEffect, useState, useRef } from 'react';
-import Section from './ui/Section';
+const Stats = async () => {
+    const statsData = await reader.singletons.stats.read();
 
-const Stats = () => {
-    const [isVisible, setIsVisible] = useState(false);
-    const sectionRef = useRef<HTMLDivElement>(null);
-
-    useEffect(() => {
-        const currentRef = sectionRef.current;
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting) {
-                    setIsVisible(true);
-                }
-            },
-            { threshold: 0.1 }
-        );
-
-        if (currentRef) {
-            observer.observe(currentRef);
-        }
-
-        return () => {
-            if (currentRef) {
-                observer.unobserve(currentRef);
-            }
-        };
-    }, []);
-
+    // Default values if data is missing
     const stats = [
-        { number: 2000, suffix: '+', label: 'Membres Actifs', color: 'from-primary-400 to-primary-600' },
-        { number: 50, suffix: '+', label: 'Événements', color: 'from-secondary-400 to-secondary-600' },
-        { number: 1500, suffix: '+', label: 'Personnes Formées', color: 'from-accent-400 to-accent-600' },
-        { number: 30, suffix: '+', label: 'Partenaires', color: 'from-primary-500 to-secondary-500' },
+        { number: parseInt(statsData?.members || '2000'), suffix: '+', label: 'Membres Actifs', color: 'from-primary-400 to-primary-600' },
+        { number: parseInt(statsData?.events || '50'), suffix: '+', label: 'Événements', color: 'from-secondary-400 to-secondary-600' },
+        { number: parseInt(statsData?.trained || '1500'), suffix: '+', label: 'Personnes Formées', color: 'from-accent-400 to-accent-600' },
+        { number: parseInt(statsData?.partners || '30'), suffix: '+', label: 'Partenaires', color: 'from-primary-500 to-secondary-500' },
     ];
 
     return (
@@ -50,17 +27,17 @@ const Stats = () => {
                             style={{ transitionDelay: `${index * 100}ms` }}
                         >
                             {/* Gradient Background on Hover */}
-                            <div className={`absolute inset-0 bg-gradient-to-br ${stat.color} opacity-0 group-hover:opacity-100 rounded-[2.5rem] transition-opacity duration-500`}></div>
+                            <div className={`absolute inset-0 bg-gradient-to-br ${stat.color} opacity-0 group-hover:opacity-5 rounded-[2.5rem] transition-opacity duration-500`}></div>
 
                             {/* Border Gradient */}
                             <div className={`absolute inset-0 rounded-[2.5rem] border-2 border-transparent bg-gradient-to-br ${stat.color} opacity-0 group-hover:opacity-100 [mask:linear-gradient(#fff_0_0)_padding-box,linear-gradient(#fff_0_0)] [-webkit-mask-composite:xor] [mask-composite:exclude] pointer-events-none transition-opacity duration-500`}></div>
 
                             <div className="relative z-10 text-center">
-                                <div className={`text-5xl md:text-6xl font-display font-bold bg-gradient-to-br ${stat.color} bg-clip-text text-transparent group-hover:text-white group-hover:bg-none transition-all duration-500 mb-4`}>
+                                <div className={`text-5xl md:text-6xl font-display font-bold bg-gradient-to-br ${stat.color} bg-clip-text text-transparent mb-4`}>
                                     {isVisible ? <Counter end={stat.number} duration={2000} /> : 0}
                                     {stat.suffix}
                                 </div>
-                                <div className="text-gray-500 group-hover:text-white/90 font-medium text-lg uppercase tracking-wider transition-colors duration-500">
+                                <div className="text-gray-500 font-medium text-lg uppercase tracking-wider">
                                     {stat.label}
                                 </div>
                             </div>
