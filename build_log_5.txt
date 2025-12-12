@@ -1,0 +1,29 @@
+
+> blockchainbenin-website@0.1.0 build
+> next build
+
+ ⚠ Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of /home/bened/pnpm-lock.yaml as the root directory.
+ To silence this warning, set `turbopack.root` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack#root-directory for more information.
+ Detected additional lockfiles: 
+   * /home/bened/project/blockchain-benin/pnpm-lock.yaml
+
+   ▲ Next.js 16.0.7 (Turbopack)
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 20.8s
+   Running TypeScript ...
+Failed to compile.
+
+./src/components/Programs.tsx:29:51
+Type error: Property 'programs' does not exist on type '{ events: CollectionReader<{ title: SlugFormField<{ name: string; slug: string; }, { name: string; slug: string; }, { name: string; slug: string; }, string>; date: BasicFormField<string | null, string>; ... 16 more ...; registrationLink: BasicFormField<...>; }, "title">; gallery: CollectionReader<...>; products: Col...'.
+
+[0m [90m 27 |[39m
+ [90m 28 |[39m [36mconst[39m [33mPrograms[39m [33m=[39m [36masync[39m () [33m=>[39m {
+[31m[1m>[22m[39m[90m 29 |[39m     [36mconst[39m programsData [33m=[39m [36mawait[39m reader[33m.[39mcollections[33m.[39mprograms[33m.[39mall()[33m;[39m
+ [90m    |[39m                                                   [31m[1m^[22m[39m
+ [90m 30 |[39m
+ [90m 31 |[39m     [36mreturn[39m (
+ [90m 32 |[39m         [33m<[39m[33mSection[39m id[33m=[39m[32m"programs"[39m className[33m=[39m[32m"relative bg-gradient-to-b from-white via-gray-50 to-white py-32 overflow-hidden"[39m[33m>[39m[0m
+Next.js build worker exited with code: 1 and signal: null

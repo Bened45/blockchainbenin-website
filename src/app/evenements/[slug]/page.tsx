@@ -21,9 +21,21 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         return { title: 'Événement non trouvé' };
     }
 
+    // Extract text from description document
+    const descriptionNodes = await event.description();
+    const descriptionText = descriptionNodes
+        .map((node: any) => {
+            if (node.type === 'paragraph' && node.children) {
+                return node.children.map((child: any) => child.text || '').join('');
+            }
+            return '';
+        })
+        .join(' ')
+        .slice(0, 160); // Limit to 160 characters for SEO
+
     return {
         title: `${event.title} | Événements | Blockchain Bénin`,
-        description: event.description,
+        description: descriptionText || event.subtitle,
     };
 }
 
@@ -46,7 +58,7 @@ export default async function EventDetailPage({ params }: PageProps) {
     const month = dateObj.toLocaleString('fr-FR', { month: 'short' }).replace('.', '');
     const formattedDate = dateObj.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
 
-    const fullDescription = await eventData.fullDescription();
+    const fullDescription = await eventData.description();
 
     const event = {
         ...eventData,

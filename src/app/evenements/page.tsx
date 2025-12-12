@@ -30,7 +30,6 @@ const EventsPage = async () => {
             time: data.time,
             location: data.location,
             subtitle: data.subtitle,
-            description: data.description,
             participants: data.participants,
             type: data.type,
             color: data.color,
@@ -134,7 +133,6 @@ const EventsPage = async () => {
                                         {event.title}
                                     </h2>
                                     <p className="text-primary-300 font-medium mb-4">{event.subtitle}</p>
-                                    <p className="text-gray-300 mb-6 max-w-2xl">{event.description}</p>
 
                                     <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 text-sm text-gray-400 mb-6">
                                         <div className="flex items-center gap-2">
@@ -211,7 +209,6 @@ const EventsPage = async () => {
                                         {event.title}
                                     </h3>
                                     <p className="text-gray-400 text-sm mb-3">{event.subtitle}</p>
-                                    <p className="text-gray-300 text-sm mb-4 line-clamp-2">{event.description}</p>
                                 </div>
 
                                 {/* Footer */}

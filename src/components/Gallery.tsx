@@ -36,15 +36,15 @@ const Gallery = () => {
             </div>
 
             <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 auto-rows-[200px] sm:auto-rows-[250px] md:auto-rows-[300px]">
-                {items.map((item, index) => (
+                {galleryItems.map((item, index) => (
                     <Link
                         href="/galerie"
                         key={index}
                         className={`
                             group relative rounded-3xl overflow-hidden cursor-pointer block
-                            ${item.entry.size === 'large' ? 'md:col-span-2 md:row-span-2' : ''}
-                            ${item.entry.size === 'wide' ? 'md:col-span-2' : ''}
-                            ${item.entry.size === 'tall' ? 'md:row-span-2' : ''}
+                            ${item.size === 'large' ? 'md:col-span-2 md:row-span-2' : ''}
+                            ${item.size === 'wide' ? 'md:col-span-2' : ''}
+                            ${item.size === 'tall' ? 'md:row-span-2' : ''}
                         `}
                     >
                         <Image
@@ -56,8 +56,8 @@ const Gallery = () => {
                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
                         <div className="absolute bottom-0 left-0 p-8 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
-                            <span className="text-primary-400 text-sm font-bold uppercase tracking-wider mb-2 block">{item.entry.category}</span>
-                            <h3 className="text-2xl font-bold text-white">{item.entry.title}</h3>
+                            <span className="text-primary-400 text-sm font-bold uppercase tracking-wider mb-2 block">{item.category}</span>
+                            <h3 className="text-2xl font-bold text-white">{item.title}</h3>
                         </div>
                     </Link>
                 ))}

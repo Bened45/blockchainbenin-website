@@ -27,7 +27,7 @@ const Partners = async () => {
                             className="relative w-32 h-20 flex-shrink-0 transition-all duration-300 hover:scale-110"
                         >
                             <Image
-                                src={partner.entry.logo}
+                                src={partner.entry.logo || '/images/placeholder-logo.png'}
                                 alt={partner.entry.name}
                                 fill
                                 className="object-contain"

@@ -1,16 +1,38 @@
-import React from 'react';
-import { reader } from '@/lib/keystatic';
-import StatsClient from './StatsClient';
+"use client";
 
-const Stats = async () => {
-    const statsData = await reader.singletons.stats.read();
+import React, { useState, useEffect, useRef } from 'react';
+import Section from './ui/Section';
 
-    // Default values if data is missing
+const Stats = () => {
+    const sectionRef = useRef<HTMLDivElement>(null);
+    const [isVisible, setIsVisible] = useState(false);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setIsVisible(true);
+                }
+            },
+            { threshold: 0.1 }
+        );
+
+        if (sectionRef.current) {
+            observer.observe(sectionRef.current);
+        }
+
+        return () => {
+            if (sectionRef.current) {
+                observer.unobserve(sectionRef.current);
+            }
+        };
+    }, []);
+
     const stats = [
-        { number: parseInt(statsData?.members || '2000'), suffix: '+', label: 'Membres Actifs', color: 'from-primary-400 to-primary-600' },
-        { number: parseInt(statsData?.events || '50'), suffix: '+', label: 'Événements', color: 'from-secondary-400 to-secondary-600' },
-        { number: parseInt(statsData?.trained || '1500'), suffix: '+', label: 'Personnes Formées', color: 'from-accent-400 to-accent-600' },
-        { number: parseInt(statsData?.partners || '30'), suffix: '+', label: 'Partenaires', color: 'from-primary-500 to-secondary-500' },
+        { number: 2000, suffix: '+', label: 'Membres Actifs', color: 'from-primary-400 to-primary-600' },
+        { number: 50, suffix: '+', label: 'Événements', color: 'from-secondary-400 to-secondary-600' },
+        { number: 1500, suffix: '+', label: 'Personnes Formées', color: 'from-accent-400 to-accent-600' },
+        { number: 30, suffix: '+', label: 'Partenaires', color: 'from-primary-500 to-secondary-500' },
     ];
 
     return (

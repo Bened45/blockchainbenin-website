@@ -34,7 +34,7 @@ export default function Home() {
                 <Pillars />
                 <Events />
                 <Partners />
-                <Gallery items={sortedGallery} />
+                <Gallery />
                 <Newsletter />
                 <FAQ />
             </div>

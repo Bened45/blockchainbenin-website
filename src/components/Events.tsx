@@ -109,11 +109,11 @@ const Events = () => {
                         <div className="absolute inset-0 p-8 flex flex-col justify-between">
                             <div className="flex justify-between items-start">
                                 <span className="px-4 py-2 rounded-full bg-white/10 backdrop-blur-md text-white text-sm font-bold border border-white/20">
-                                    {categoryLabel}
+                                    {event.category}
                                 </span>
                                 <div className="flex flex-col items-center bg-white/10 backdrop-blur-md rounded-2xl p-3 border border-white/20 text-white">
-                                    <span className="text-xs uppercase font-bold">{month}</span>
-                                    <span className="text-2xl font-bold">{day}</span>
+                                    <span className="text-xs uppercase font-bold">{event.date.split(' ')[1]}</span>
+                                    <span className="text-2xl font-bold">{event.date.split(' ')[0]}</span>
                                 </div>
                             </div>
 
@@ -133,9 +133,9 @@ const Events = () => {
                                 </Button>
                             </div>
                         </div>
-                        );
-                })}
                     </div>
+                ))}
+            </div>
         </Section>
     );
 };

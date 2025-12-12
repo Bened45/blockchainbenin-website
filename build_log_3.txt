@@ -4,29 +4,26 @@
 
  ⚠ Warning: Next.js inferred your workspace root, but it may not be correct.
  We detected multiple lockfiles and selected the directory of /home/bened/pnpm-lock.yaml as the root directory.
- To silence this warning, set `outputFileTracingRoot` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
-   See https://nextjs.org/docs/app/api-reference/config/next-config-js/output#caveats for more information.
+ To silence this warning, set `turbopack.root` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack#root-directory for more information.
  Detected additional lockfiles: 
    * /home/bened/project/blockchain-benin/pnpm-lock.yaml
 
-   ▲ Next.js 15.5.6
+   ▲ Next.js 16.0.7 (Turbopack)
 
    Creating an optimized production build ...
- ✓ Compiled successfully in 4.4s
-   Linting and checking validity of types ...
-
+ ✓ Compiled successfully in 30.1s
+   Running TypeScript ...
 Failed to compile.
 
-./src/app/programmes/page.tsx
-321:42  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+./src/app/evenements/page.tsx:137:81
+Type error: Type '() => Promise<DocumentElement[]>' is not assignable to type 'ReactNode'.
 
-./src/components/About.tsx
-208:34  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-216:97  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-222:44  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-222:154  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-
-./src/components/Stats.tsx
-26:47  Warning: The ref value 'sectionRef.current' will likely have changed by the time this effect cleanup function runs. If this ref points to a node rendered by React, copy 'sectionRef.current' to a variable inside the effect, and use that variable in the cleanup function.  react-hooks/exhaustive-deps
-
-info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/app/api-reference/config/eslint#disabling-rules
+[0m [90m 135 |[39m                                     [33m<[39m[33m/[39m[33mh2[39m[33m>[39m
+ [90m 136 |[39m                                     [33m<[39m[33mp[39m className[33m=[39m[32m"text-primary-300 font-medium mb-4"[39m[33m>[39m{event[33m.[39msubtitle}[33m<[39m[33m/[39m[33mp[39m[33m>[39m
+[31m[1m>[22m[39m[90m 137 |[39m                                     [33m<[39m[33mp[39m className[33m=[39m[32m"text-gray-300 mb-6 max-w-2xl"[39m[33m>[39m{event[33m.[39mdescription}[33m<[39m[33m/[39m[33mp[39m[33m>[39m
+ [90m     |[39m                                                                                 [31m[1m^[22m[39m
+ [90m 138 |[39m
+ [90m 139 |[39m                                     [33m<[39m[33mdiv[39m className[33m=[39m[32m"flex flex-wrap items-center justify-center lg:justify-start gap-6 text-sm text-gray-400 mb-6"[39m[33m>[39m
+ [90m 140 |[39m                                         [33m<[39m[33mdiv[39m className[33m=[39m[32m"flex items-center gap-2"[39m[33m>[39m[0m
+Next.js build worker exited with code: 1 and signal: null

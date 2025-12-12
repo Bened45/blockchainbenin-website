@@ -1,0 +1,53 @@
+
+> blockchainbenin-website@0.1.0 build
+> next build
+
+ ⚠ Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of /home/bened/pnpm-lock.yaml as the root directory.
+ To silence this warning, set `turbopack.root` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack#root-directory for more information.
+ Detected additional lockfiles: 
+   * /home/bened/project/blockchain-benin/pnpm-lock.yaml
+
+   ▲ Next.js 16.0.7 (Turbopack)
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 22.3s
+   Running TypeScript ...
+   Collecting page data using 3 workers ...
+   Generating static pages using 3 workers (0/19) ...
+   Generating static pages using 3 workers (4/19) 
+   Generating static pages using 3 workers (9/19) 
+   Generating static pages using 3 workers (14/19) 
+ ✓ Generating static pages using 3 workers (19/19) in 1261.4ms
+   Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ○ /about
+├ ƒ /api/keystatic/[...params]
+├ ƒ /api/keystatic/[[...params]]
+├ ○ /club-blockchain
+├ ○ /don
+├ ○ /evenements
+├ ● /evenements/[slug]
+│ ├ /evenements/crypto-treasury
+│ ├ /evenements/noel-en-or
+│ ├ /evenements/stellar-pop-city
+│ └ /evenements/web3-meetup
+├ ○ /galerie
+├ ○ /keystatic
+├ ƒ /keystatic/[[...params]]
+├ ○ /programmes
+├ ○ /rejoindre
+├ ○ /ressources
+├ ○ /robots.txt
+├ ○ /sitemap.xml
+└ ○ /soutenir
+
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+
